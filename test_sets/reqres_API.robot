@@ -11,3 +11,11 @@ RA-01 List Users
     ${response}    GET On Session   ${SESSION}    ${LIST_USERS}
     Status Should Be    200    ${response}
     Dictionary Should Contain Key    ${response.json()}    data
+
+RA-02 Single User
+    [Documentation]    Checks that the requres API returns user request data.
+    ${response}    GET On Session    ${SESSION}    ${USER_2}
+    Status Should Be    200    ${response}
+    Dictionary Should Contain Key    ${response.json()}    data
+    Should Be Equal As Strings    ${response.json()}[data][first_name]    Janet
+    Should Be Equal As Strings    ${response.json()}[data][last_name]    Weaver
