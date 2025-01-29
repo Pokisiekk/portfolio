@@ -33,3 +33,11 @@ RA-04 Create User
     Status Should Be    201    ${response}
     Dictionary Should Contain Key    ${response.json()}    id
     Dictionary Should Contain Key    ${response.json()}    createdAt
+
+RA-05 Update User - PUT
+    [Documentation]    Checks that a user's data can be fully updated via the
+    ...    reqres API.
+    ${body}    Create Dictionary    name=Kamil    job=Tester
+    ${response}    PUT On Session    ${SESSION}    /users/2    json=${body}
+    Status Should Be    200    ${response}
+    Dictionary Should Contain Key    ${response.json()}    updatedAt
