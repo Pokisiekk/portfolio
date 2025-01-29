@@ -57,3 +57,12 @@ RA-07 Delete User
     [Documentation]    Checks that a user can be deleted via the reqres API.
     ${response}    DELETE On Session    ${SESSION}    /users/2    expected_status=any
     Status Should Be    204    ${response}
+
+RA-08 Register User Successfully
+    [Documentation]    Checks that a user can register successfully via the
+    ...    reqres API.
+    ${body}    Create Dictionary    email=eve.holt@reqres.in    password=pistol
+    ${response}    POST On Session    ${SESSION}    /register    json=${body}
+    Status Should Be    200    ${response}
+    Should Be Equal As Integers    ${response.json()}[id]    4
+    Should Be Equal As Strings    ${response.json()}[token]    QpwL5tke4Pnpja7X4
