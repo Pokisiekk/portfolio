@@ -82,3 +82,10 @@ RA-10 Login User Successfully
     ${response}    POST On Session    ${SESSION}    /login    json=${body}
     Status Should Be    200    ${response}
     Should Be Equal As Strings    ${response.json()}[token]    QpwL5tke4Pnpja7X4
+
+RA-11 Login User Unsuccessfully
+    [Documentation]    Checks that login fails when no password is provided.
+    ${body}    Create Dictionary    email=eve.holt@reqres.in
+    ${response}    POST On Session    ${SESSION}    /login    json=${body}    expected_status=any
+    Status Should Be    400    ${response}
+    Dictionary Should Contain Key    ${response.json()}    error
