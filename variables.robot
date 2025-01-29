@@ -1,6 +1,8 @@
 *** Variables ***
 ${REQRES_URL}            https://reqres.in/api
 ${SESSION}               reqres
+${TOKEN}                 QpwL5tke4Pnpja7X4
+${EMAIL}                 eve.holt@reqres.in
 
 # API requests
 ${USERS}                 /users
