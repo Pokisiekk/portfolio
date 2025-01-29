@@ -19,3 +19,9 @@ RA-02 Single User
     Dictionary Should Contain Key    ${response.json()}    data
     Should Be Equal As Strings    ${response.json()}[data][first_name]    Janet
     Should Be Equal As Strings    ${response.json()}[data][last_name]    Weaver
+
+RA-03 Single User Not Found
+    [Documentation]    Checks that the requres API returns the correct error
+    ...    code for a non-existent user.
+    ${response}    GET On Session    ${SESSION}    /users/48
+    Status Should Be    404    ${response}
