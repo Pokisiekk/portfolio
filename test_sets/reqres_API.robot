@@ -2,7 +2,7 @@
 Resource            ../keywords.robot
 Resource            ../variables.robot
 
-Suite Setup         Check Reqres API Availability
+Suite Setup         Setup Reqres API
 
 *** Test Cases ***
 RA-01 List Users
