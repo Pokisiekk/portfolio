@@ -74,3 +74,11 @@ RA-09 Register User Unsuccessfully
     ${response}    POST On Session    ${SESSION}    /register    json=${body}    expected_status=any
     Status Should Be    400    ${response}
     Dictionary Should Contain Key    ${response.json()}    error
+
+RA-10 Login User Successfully
+    [Documentation]    Checks that a user can log in successfully via the
+    ...    reqres API.
+    ${body}    Create Dictionary    email=eve.holt@reqres.in    password=cityslicka
+    ${response}    POST On Session    ${SESSION}    /login    json=${body}
+    Status Should Be    200    ${response}
+    Should Be Equal As Strings    ${response.json()}[token]    QpwL5tke4Pnpja7X4
