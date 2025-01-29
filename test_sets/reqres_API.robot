@@ -23,5 +23,13 @@ RA-02 Single User
 RA-03 Single User Not Found
     [Documentation]    Checks that the requres API returns the correct error
     ...    code for a non-existent user.
-    ${response}    GET On Session    ${SESSION}    /users/48
+    ${response}    GET On Session    ${SESSION}    /users/48    expected_status=any
     Status Should Be    404    ${response}
+
+RA-04 Create User
+    [Documentation]    Checks that a user can be added via the requres API.
+    ${body}    Create Dictionary    name=Kamil    job=Tester
+    ${response}    POST On Session    ${SESSION}    /users    json=${body}
+    Status Should Be    201    ${response}
+    Dictionary Should Contain Key    ${response.json()}    id
+    Dictionary Should Contain Key    ${response.json()}    createdAt
