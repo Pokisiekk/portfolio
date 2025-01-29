@@ -10,13 +10,13 @@ RA-01 List Users
     ...    correctly.
     ${response}    GET On Session   ${SESSION}    ${LIST_USERS}
     Status Should Be    200    ${response}
-    Dictionary Should Contain Key    ${response.json()}    data
+    Should Contain    ${response.json()}    data
 
 RA-02 Single User
     [Documentation]    Checks that the requres API returns user request data.
     ${response}    GET On Session    ${SESSION}    ${USER_2}
     Status Should Be    200    ${response}
-    Dictionary Should Contain Key    ${response.json()}    data
+    Should Contain    ${response.json()}    data
     Should Be Equal As Strings    ${response.json()}[data][first_name]    Janet
     Should Be Equal As Strings    ${response.json()}[data][last_name]    Weaver
 
@@ -31,8 +31,8 @@ RA-04 Create User
     ${body}    Create Dictionary    name=Kamil    job=Tester
     ${response}    POST On Session    ${SESSION}    ${USERS}    json=${body}
     Status Should Be    201    ${response}
-    Dictionary Should Contain Key    ${response.json()}    id
-    Dictionary Should Contain Key    ${response.json()}    createdAt
+    Should Contain    ${response.json()}    id
+    Should Contain    ${response.json()}    createdAt
 
 RA-05 Update User - PUT
     [Documentation]    Checks that a user's data can be fully updated via the
@@ -40,7 +40,7 @@ RA-05 Update User - PUT
     ${body}    Create Dictionary    name=Kamil    job=Tester
     ${response}    PUT On Session    ${SESSION}    ${USER_2}    json=${body}
     Status Should Be    200    ${response}
-    Dictionary Should Contain Key    ${response.json()}    updatedAt
+    Should Contain    ${response.json()}    updatedAt
     Should Be Equal As Strings    ${response.json()}[name]    Kamil
     Should Be Equal As Strings    ${response.json()}[job]    Tester
 
@@ -50,7 +50,7 @@ RA-06 Update User - PATCH
     ${body}    Create Dictionary    job=Developer
     ${response}    PATCH On Session    ${SESSION}    ${USER_2}    json=${body}
     Status Should Be    200    ${response}
-    Dictionary Should Contain Key    ${response.json()}    updatedAt
+    Should Contain    ${response.json()}    updatedAt
     Should Be Equal As Strings    ${response.json()}[job]    Developer
 
 RA-07 Delete User
@@ -73,7 +73,7 @@ RA-09 Register User Unsuccessfully
     ${body}    Create Dictionary    email=eve.holt@reqres.in
     ${response}    POST On Session    ${SESSION}    ${REGISTER}   json=${body}    expected_status=any
     Status Should Be    400    ${response}
-    Dictionary Should Contain Key    ${response.json()}    error
+    Should Contain    ${response.json()}    error
 
 RA-10 Login User Successfully
     [Documentation]    Checks that a user can log in successfully via the
@@ -88,4 +88,4 @@ RA-11 Login User Unsuccessfully
     ${body}    Create Dictionary    email=eve.holt@reqres.in
     ${response}    POST On Session    ${SESSION}    ${LOGIN}    json=${body}    expected_status=any
     Status Should Be    400    ${response}
-    Dictionary Should Contain Key    ${response.json()}    error
+    Should Contain    ${response.json()}    error
