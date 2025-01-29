@@ -66,3 +66,11 @@ RA-08 Register User Successfully
     Status Should Be    200    ${response}
     Should Be Equal As Integers    ${response.json()}[id]    4
     Should Be Equal As Strings    ${response.json()}[token]    QpwL5tke4Pnpja7X4
+
+RA-09 Register User Unsuccessfully
+    [Documentation]    Checks that registration via the reqres API fails when no
+    ...    password is provided.
+    ${body}    Create Dictionary    email=eve.holt@reqres.in
+    ${response}    POST On Session    ${SESSION}    /register    json=${body}    expected_status=any
+    Status Should Be    400    ${response}
+    Dictionary Should Contain Key    ${response.json()}    error
