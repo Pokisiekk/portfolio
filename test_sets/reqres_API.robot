@@ -41,3 +41,14 @@ RA-05 Update User - PUT
     ${response}    PUT On Session    ${SESSION}    /users/2    json=${body}
     Status Should Be    200    ${response}
     Dictionary Should Contain Key    ${response.json()}    updatedAt
+    Should Be Equal As Strings    ${response.json()}[name]    Kamil
+    Should Be Equal As Strings    ${response.json()}[job]    Tester
+
+RA-06 Update User - PATCH
+    [Documentation]    Checks that a user's data can be partially updated via
+    ...    the reqres API.
+    ${body}    Create Dictionary    job=Developer
+    ${response}    PATCH On Session    ${SESSION}    /users/2    json=${body}
+    Status Should Be    200    ${response}
+    Dictionary Should Contain Key    ${response.json()}    updatedAt
+    Should Be Equal As Strings    ${response.json()}[job]    Developer
