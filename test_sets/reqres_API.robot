@@ -52,3 +52,8 @@ RA-06 Update User - PATCH
     Status Should Be    200    ${response}
     Dictionary Should Contain Key    ${response.json()}    updatedAt
     Should Be Equal As Strings    ${response.json()}[job]    Developer
+
+RA-07 Delete User
+    [Documentation]    Checks that a user can be deleted via the reqres API.
+    ${response}    DELETE On Session    ${SESSION}    /users/2    expected_status=any
+    Status Should Be    204    ${response}
