@@ -1,6 +1,7 @@
 *** Settings ***
 Library         RequestsLibrary
 Library         Collections
+Library         SeleniumLibrary
 Resource        variables.robot
 
 *** Keywords ***
@@ -26,3 +27,13 @@ Post Request With Dictionary
     ${response}    POST On Session    ${SESSION}    ${request}    json=${body}
     ...    expected_status=any
     RETURN    ${response}
+    
+Login To OrangeHRM Website
+    [Documentation]    Opens orangeHRM.com website and logs in as an admin user.
+    Open Browser    ${URL}    ${BROWSER}
+    Maximize Browser Window
+    Wait Until Element Is Visible    name=username    ${WAITING_TIME}
+    Input Text    name=username    ${USERNAME}
+    Input Text    name=password    ${PASSWORD}
+    Click Button    xpath://button[@type="submit"]
+    Wait Until Element Is Visible    xpath://h6[text()="Dashboard"]    ${WAITING_TIME}
