@@ -22,19 +22,9 @@ OH-02 Admin Tab
     ...                website works correctly.
     Click Element    ${ADMIN_TAB}
     Wait Until Element Is Visible    ${ADMIN_TITLE}    ${WAITING_TIME}
-    Click Element    ${USER_ROLE}
-    Wait Until Element Contains    ${LISTBOX}    ${ADMIN_USER_ROLE}    ${WAITING_TIME}
-    Click Element    ${LISTBOX_ADMIN}
-    Click Button    ${SUBMIT_BUTTON}
-    Wait Until Element Is Visible    ${RECORDS_FILED}
-    Element Should Not Contain    ${RECORDS_FILED}     No Records Found
+    Find User By Role    ${ADMIN_USER_ROLE}    ${LISTBOX_ADMIN}
     Click Element    ${RESET_BUTTON}
-    Click Element    ${USER_ROLE}
-    Wait Until Element Contains    ${LISTBOX}    ${ESS_USER_ROLE}    ${WAITING_TIME}
-    Click Element    ${LISTBOX_ESS}
-    Click Button    ${SUBMIT_BUTTON}
-    Wait Until Element Is Visible    ${RECORDS_FILED}
-    Element Should Not Contain    ${RECORDS_FILED}    No Records Found
+    Find User By Role    ${ESS_USER_ROLE}    ${LISTBOX_ESS}
 
 OH-03 Client Companies In Projects
     [Documentation]    Checks that client companies are added to the project information tab on
@@ -44,5 +34,4 @@ OH-03 Client Companies In Projects
     Click Element    ${PROJECT_INFO}
     Wait Until Element Is Visible    ${CUSTOMERS}
     Click Element    ${CUSTOMERS}
-    Wait Until Element Is Visible    ${RECORDS_FILED} 
-    Element Should Not Contain    ${RECORDS_FILED}    No Records Found
+    Check Records
