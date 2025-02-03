@@ -26,7 +26,7 @@ OH-02 Admin Tab
     Wait Until Element Contains    xpath://div[@role='listbox']    Admin    ${WAITING_TIME}
     Click Element    xpath=//div[@role='listbox']//*[normalize-space(text())="Admin"]
     Click Button    xpath://button[@type="submit"]
-    Wait Until Element Is Visible    xpath=//div[@class="orangehrm-horizontal-padding orangehrm-vertical-padding"]//span[contains(normalize-space(.), 'Records Found')] 
+    Wait Until Element Is Visible    xpath=//div[@class="orangehrm-horizontal-padding orangehrm-vertical-padding"]//span[contains(normalize-space(.), 'Records Found')]
     Element Should Not Contain    xpath=//div[@class="orangehrm-horizontal-padding orangehrm-vertical-padding"]//span[contains(normalize-space(.), 'Records Found')]     No Records Found
     Click Element    xpath=(//button[@type="button" and normalize-space(.)="Reset"])
     Click Element    xpath=(//div[@class="oxd-select-text-input" and normalize-space(text())="-- Select --"])[1]
@@ -34,4 +34,15 @@ OH-02 Admin Tab
     Click Element    xpath=//div[@role='listbox']//*[normalize-space(text())="ESS"]
     Click Button    xpath://button[@type="submit"]
     Wait Until Element Is Visible    xpath=//div[@class="orangehrm-horizontal-padding orangehrm-vertical-padding"]//span[contains(normalize-space(.), 'Records Found')] 
-    Element Should Not Contain    xpath=//div[@class="orangehrm-horizontal-padding orangehrm-vertical-padding"]//span[contains(normalize-space(.), 'Records Found')]     No Records Found
+    Element Should Not Contain    xpath=//div[@class="orangehrm-horizontal-padding orangehrm-vertical-padding"]//span[contains(normalize-space(.), 'Records Found')]    No Records Found
+
+OH-03 Client Companies In Projects
+    [Documentation]    Checks that client companies are added to the project information tab on
+    ...                oragneHRM website.
+    Click Element    xpath://a[@href='/web/index.php/time/viewTimeModule']
+    Wait Until Element Is Visible    xpath://h6[text()="Time"]    ${WAITING_TIME}
+    Click Element    xpath://span[normalize-space(.)="Project Info"]
+    Wait Until Element Is Visible    xpath=//a[text()="Customers"]
+    Click Element    xpath=//a[text()="Customers"]
+    Wait Until Element Is Visible    xpath=//div[@class="orangehrm-horizontal-padding orangehrm-vertical-padding"]//span[contains(normalize-space(.), 'Records Found')] 
+    Element Should Not Contain    xpath=//div[@class="orangehrm-horizontal-padding orangehrm-vertical-padding"]//span[contains(normalize-space(.), 'Records Found')]    No Records Found
