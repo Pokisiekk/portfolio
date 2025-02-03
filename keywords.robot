@@ -35,5 +35,19 @@ Login To OrangeHRM Website
     Wait Until Element Is Visible    name=username    ${WAITING_TIME}
     Input Text    name=username    ${USERNAME}
     Input Text    name=password    ${PASSWORD}
-    Click Button    xpath://button[@type="submit"]
-    Wait Until Element Is Visible    xpath://h6[text()="Dashboard"]    ${WAITING_TIME}
+    Click Button    ${SUBMIT_BUTTON}
+    Wait Until Element Is Visible    ${DASHBOARD_TITLE}    ${WAITING_TIME}
+
+Check Records
+    [Documentation]    Checks that at least one matching record is found.
+    Wait Until Element Is Visible    ${RECORDS_FILED} 
+    Element Should Not Contain    ${RECORDS_FILED}    No Records Found
+
+Find User By Role
+    [Documentation]    Searches for users by a given role.
+    [Arguments]    ${role}    ${element}
+    Click Element    ${USER_ROLE}
+    Wait Until Element Contains    ${LISTBOX}    ${role}    ${WAITING_TIME}
+    Click Element    ${element}
+    Click Button    ${SUBMIT_BUTTON}
+    Check Records
