@@ -38,7 +38,7 @@ ${ADMIN_TAB}             xpath://a[@href='/web/index.php/admin/viewAdminModule']
 ${ADMIN_TITLE}           xpath://h6[text()="Admin"]
 ${USER_ROLE}             xpath=(//div[@class="oxd-select-text-input" and normalize-space(text())="-- Select --"])[1]
 ${RECORDS_FILED}         xpath=//div[@class="orangehrm-horizontal-padding orangehrm-vertical-padding"]//span[contains(normalize-space(.), 'Records Found')]
-${RESET_BUTTON}          xpath=(//button[@type="button" and normalize-space(.)="Reset"])
+${RESET_BUTTON}          xpath=//button[@type="button" and normalize-space(.)="Reset"]
 ${TIME_TAB}              xpath://a[@href='/web/index.php/time/viewTimeModule']
 ${TIME_TITLE}            xpath://h6[text()="Time"]
 ${PROJECT_INFO}          xpath://span[normalize-space(.)="Project Info"]
