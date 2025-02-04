@@ -1,6 +1,5 @@
 *** Settings ***
-Resource            ../keywords.robot
-Resource            ../variables.robot
+Resource            keywords.robot
 
 Suite Setup         Setup Reqres API
 
