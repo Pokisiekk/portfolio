@@ -13,8 +13,8 @@ ES-01 Hello world
 
 ES-02 Write and Read File
     [Documentation]    Checks that Writes and reads a file on MicroPython filesystem works correctly.
-    Execute command in MicroPython    with open("test.txt", "w") as f: f.write("Test data")\x0D\x0A
-    ${response}    Execute command in MicroPython    with open("test.txt", "r") as f: print(f.read())\x0D\x0A
+    Execute command in MicroPython    with open("test.txt", "w") as f: f.write("Test data")${ENTER}
+    ${response}    Execute command in MicroPython    with open("test.txt", "r") as f: print(f.read())${ENTER}
     Should Contain    ${response}    Test data
 
 ES-03 Toggle LED
@@ -28,17 +28,17 @@ ES-03 Toggle LED
 
 ES-04 List Files
     [Documentation]    Check that lists files available on the MicroPython device works correctly.
-    Execute command in MicroPython    with open("list_files.txt", "w") as f: f.write("List Files")\x0D\x0A
+    Execute command in MicroPython    with open("list_files.txt", "w") as f: f.write("List Files")${ENTER}
     ${response}    Execute command in MicroPython    import os; print(os.listdir())
     Should Contain    ${response}    list_files.txt
     Execute command in MicroPython    os.remove("list_files.txt")
-    ${response}    Execute command in MicroPython    import os; print(os.listdir())
+    ${response}    Execute command in MicroPython    print(os.listdir())
     Should Not Contain    ${response}    list_files.txt
 
 ES-05 Read TouchPad Value
     [Documentation]    Checks that on the MicroPython is possible to read value from a capacitive
     ...                touch pin.
-    Execute command in MicroPython    from machine import TouchPad, Pin; touch = TouchPad(Pin(4))
+    Execute command in MicroPython    from machine import TouchPad; touch = TouchPad(Pin(4))
     ${response}    Execute command in MicroPython    print(touch.read())
     Should Match Regexp    ${response}    ^[0-9]+$
 
@@ -50,6 +50,6 @@ ES-06 Read NVS Storage
 
 ES-07 Check MicroPython Version
     [Documentation]    Checks that that the MicroPython version on ESP is correct.
-    ${response}    Execute command in MicroPython    import os; print(os.uname())
+    ${response}    Execute command in MicroPython    print(os.uname())
     Should Contain    ${response}    esp32
-    Should Contain    ${response}    1.24.1
+    Should Contain    ${response}    ${MICROPYTHON_VERSION}
