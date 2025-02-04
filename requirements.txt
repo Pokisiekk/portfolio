@@ -1,4 +1,4 @@
 robotframework==7.2
 robotframework-requests==0.9.7
 robotframework-seleniumlibrary==6.7.0
-robotframework-pyserial==1.4.0
+robotframework-seriallibrary==0.4.3
