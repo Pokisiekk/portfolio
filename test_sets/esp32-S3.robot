@@ -25,3 +25,12 @@ ES-03 Toggle LED
     Execute command in MicroPython    led.value(0)
     ${response}    Execute command in MicroPython    print(led.value())
     Should Be Equal    ${response}    0
+
+ES-04 List Files
+    [Documentation]    Check that lists files available on the MicroPython device works correctly.
+    Execute command in MicroPython    with open("list_files.txt", "w") as f: f.write("List Files")\x0D\x0A
+    ${response}    Execute command in MicroPython    import os; print(os.listdir())
+    Should Contain    ${response}    list_files.txt
+    Execute command in MicroPython    os.remove("list_files.txt")
+    ${response}    Execute command in MicroPython    import os; print(os.listdir())
+    Should Not Contain    ${response}    list_files.txt
