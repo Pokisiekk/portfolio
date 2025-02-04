@@ -44,3 +44,11 @@ ${TIME_TITLE}            xpath://h6[text()="Time"]
 ${PROJECT_INFO}          xpath://span[normalize-space(.)="Project Info"]
 ${CUSTOMERS}             xpath=//a[text()="Customers"]
 ${DASHBOARD_TITLE}       xpath://h6[text()="Dashboard"]
+
+# ESP32
+${ENTER}                 \x0D\x0A
+${PROMPT}                >>>
+${PORT}                  /dev/ttyACM0
+${BAUDRATE}              115200
+${ENCODING}              utf-8
+${MICROPYTHON_VERSION}   1.24.1
