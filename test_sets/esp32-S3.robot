@@ -43,7 +43,13 @@ ES-05 Read TouchPad Value
     Should Match Regexp    ${response}    ^[0-9]+$
 
 ES-06 Read NVS Storage
-    [Documentation]    Check that on ESP32 with MicroPython is possbile to read a stored value from
+    [Documentation]    Checks that on ESP32 with MicroPython is possbile to read a stored value from
     ...                NVS (Non-Volatile Storage).
     ${response}    Execute command in MicroPython    import esp32; print(esp32.NVS)
     Should Not Be Empty    ${response}
+
+ES-07 Check MicroPython Version
+    [Documentation]    Checks that that the MicroPython version on ESP is correct.
+    ${response}    Execute command in MicroPython    import os; print(os.uname())
+    Should Contain    ${response}    esp32
+    Should Contain    ${response}    1.24.1
