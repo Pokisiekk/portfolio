@@ -35,9 +35,15 @@ ES-04 List Files
     ${response}    Execute command in MicroPython    import os; print(os.listdir())
     Should Not Contain    ${response}    list_files.txt
 
-ES-08 Read TouchPad Value
+ES-05 Read TouchPad Value
     [Documentation]    Checks that on the MicroPython is possible to read value from a capacitive
     ...                touch pin.
     Execute command in MicroPython    from machine import TouchPad, Pin; touch = TouchPad(Pin(4))
     ${response}    Execute command in MicroPython    print(touch.read())
     Should Match Regexp    ${response}    ^[0-9]+$
+
+ES-06 Read NVS Storage
+    [Documentation]    Check that on ESP32 with MicroPython is possbile to read a stored value from
+    ...                NVS (Non-Volatile Storage).
+    ${response}    Execute command in MicroPython    import esp32; print(esp32.NVS)
+    Should Not Be Empty    ${response}
