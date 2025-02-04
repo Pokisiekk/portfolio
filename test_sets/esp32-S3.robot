@@ -34,3 +34,10 @@ ES-04 List Files
     Execute command in MicroPython    os.remove("list_files.txt")
     ${response}    Execute command in MicroPython    import os; print(os.listdir())
     Should Not Contain    ${response}    list_files.txt
+
+ES-08 Read TouchPad Value
+    [Documentation]    Checks that on the MicroPython is possible to read value from a capacitive
+    ...                touch pin.
+    Execute command in MicroPython    from machine import TouchPad, Pin; touch = TouchPad(Pin(4))
+    ${response}    Execute command in MicroPython    print(touch.read())
+    Should Match Regexp    ${response}    ^[0-9]+$
