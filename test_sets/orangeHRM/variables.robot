@@ -3,7 +3,7 @@ ${URL}                   https://opensource-demo.orangehrmlive.com
 ${BROWSER}               Chrome
 ${USERNAME}              Admin
 ${PASSWORD}              admin123
-${WAITING_TIME}          10s
+${DEFAULT_TIMEOUT}       10s
 ${NAME}                  Rebecca
 ${TEST_SURNAME}          Harmony
 ${TEST_FULL_NAME}        ${NAME} ${TEST_SURNAME}
