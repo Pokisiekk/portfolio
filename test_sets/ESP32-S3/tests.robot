@@ -48,7 +48,16 @@ ES-06 Read NVS Storage
     Should Not Be Empty    ${response}
 
 ES-07 Check MicroPython Version
-    [Documentation]    Checks that that the MicroPython version on ESP is correct.
+    [Documentation]    Checks that the MicroPython version on ESP is correct.
     ${response}    Execute command in MicroPython    print(os.uname())
     Should Contain    ${response}    esp32
     Should Contain    ${response}    ${MICROPYTHON_VERSION}
+
+ES-08 Check Wifi
+    [Documentation]    Checks that Wifi is possible to configure and set up a connection to the host
+    ...                on ESP32 with Micropython.
+    Setup Wifi Connection
+    ${ip}    Execute command in MicroPython    print(wlan.ifconfig()[0])
+    ${result}    Run Process    ping -c 1 ${ip}    shell=True    timeout=5
+    Log    ${result.stdout}
+    Should Contain    ${result.stdout}    1 packets transmitted, 1 received, 0% packet loss
