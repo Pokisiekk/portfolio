@@ -1,7 +1,9 @@
 *** Settings ***
 Library         RequestsLibrary
 Library         Collections
+Library         custom_keywords.py
 Resource        variables.robot
+
 
 *** Keywords ***
 Check Reqres API Availability
@@ -11,6 +13,7 @@ Check Reqres API Availability
 
 Setup Reqres API
     [Documentation]    Creates a session and checks the reqres API availability.
+    Disable Warnings
     Create Session    ${SESSION}    ${REQRES_URL}
     Check Reqres API Availability
 

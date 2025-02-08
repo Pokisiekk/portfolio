@@ -24,7 +24,7 @@ The structure is as follows:
     │   ├── keywords.robot  
     │   ├── tests.robot     
     │   └── variables.robot 
-    └── reqresAPI           # Files related to Reqres API
+    └── reqresAPI           # Files related to ReqRes API
         ├── keywords.robot  
         ├── tests.robot     
         └── variables.robot 
@@ -34,6 +34,21 @@ The structure is as follows:
 
 The following instructions were prepared and tested on Linux. Running tests from other systems is
 possible, but requires minor changes to the process.
+
+### Requirements
+
+For the OrangeHRM and ReqRes API tests, an internet connection is required.
+
+For the ESP32-S3 tests, the following requirements must be met:
+
+* An ESP32-S3 board with MicroPython firmware installed –
+  [MicroPython](https://micropython.org/download/ESP32_GENERIC_S3/).
+* A USB-A to USB-C cable to connect the board to the host.
+* Adjust the **${PORT}** variable to your configuration in the *test_sets/ESP32-S3/variables.robot*
+  file.
+
+### Steps to run tests
+
 To execute the tests, follow these steps:
 
 1. Clone the repository
@@ -53,19 +68,19 @@ To execute the tests, follow these steps:
 
 1. Run tests for a specific module
 
-    1. ESP32-S3 tests:
+    * ESP32-S3 tests:
 
         ```
         robot test_sets/ESP32-S3/tests.robot
         ```
 
-    1. OrangeHRM tests:
+    * OrangeHRM tests:
 
         ```
         robot test_sets/orangeHRM/tests.robot
         ```
 
-    1. ReqRes API tests:
+    * ReqRes API tests:
 
         ```
         robot test_sets/reqresAPI/tests.robot
@@ -77,10 +92,10 @@ The project includes automated tests for different types of objects:
 
 1. **ESP32-S3**: Tests related to the ESP32-S3 microcontroller, including firmware validation,
     connectivity, and functional checks. For testing purposes, MicroPython was installed on the
-    board - [MicroPython](https://micropython.org/download/ESP32_GENERIC_S3/).
+    board.
 
 1. **OrangeHRM**: Automated tests for OrangeHRM, an open-source human resource management system.
     The tests verify functionalities such as login, user management, and role assignments.
 
-1. ***ReqRes API**: Tests for ReqRes, a mock REST API used for testing. The tests validate HTTP
+1. **ReqRes API**: Tests for ReqRes, a mock REST API used for testing. The tests validate HTTP
     responses, status codes, and data integrity.
