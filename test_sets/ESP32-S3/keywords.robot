@@ -1,7 +1,7 @@
 *** Settings ***
 Library         Collections
 Library         String
-Library    Process
+Library         Process
 Resource        variables.robot
 Library         SerialLibrary    ${PORT}    baudrate=${BAUDRATE}    encoding=${ENCODING}
 
