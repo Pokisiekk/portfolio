@@ -2,3 +2,4 @@ robotframework==7.2
 robotframework-requests==0.9.7
 robotframework-seleniumlibrary==6.7.0
 robotframework-seriallibrary==0.4.3
+robotframework-browser==19.3.1
