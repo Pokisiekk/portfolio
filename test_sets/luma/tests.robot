@@ -1,14 +1,12 @@
 *** Settings ***
-Library    Browser
+Resource            keywords.robot
+
+Test Setup          Open Luma Website
+Test Teardown       Close Browser
 
 *** Test Cases ***
-Test Magento Checkout
-    [Setup]    New Browser    browser=chromium    headless=False
-    New Context
-    New Page    https://magento.softwaretestingboard.com/
-    Set Viewport Size    1920    1080
-
-    Click    role=button[name="AGREE"]
+LU-01 Add One Item To Cart
+    [DOcumentation]    Checks that adding one item to the cart works correctly.    
     Click    role=menuitem[name="What's New"]
     Click    role=link[name="Hoodies & Sweatshirts"] >> nth=0
     
@@ -24,5 +22,3 @@ Test Magento Checkout
     
     Get Text    role=textbox[name="Size"]    ==    S
     Get Text    role=textbox[name="Color"]    ==    Green
-
-    [Teardown]    Close Browser
