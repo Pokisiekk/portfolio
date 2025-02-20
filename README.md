@@ -21,13 +21,17 @@ The structure is as follows:
     │   ├── tests.robot     # Test cases
     │   └── variables.robot # Variables used in tests
     ├── orangeHRM           # Files related to OrangeHRM website
+    │   ├── keywords.robot
+    │   ├── tests.robot
+    │   └── variables.robot
+    └── reqresAPI           # Files related to ReqRes API
     │   ├── keywords.robot  
     │   ├── tests.robot     
     │   └── variables.robot 
-    └── reqresAPI           # Files related to ReqRes API
+    └── youtube             # Files related to youtube
         ├── keywords.robot  
         ├── tests.robot     
-        └── variables.robot 
+        └── variables.robot
 ```
 
 ## How to run tests
@@ -37,8 +41,6 @@ possible, but requires minor changes to the process.
 
 ### Requirements
 
-For the OrangeHRM and ReqRes API tests, an internet connection is required.
-
 For the ESP32-S3 tests, the following requirements must be met:
 
 * An ESP32-S3 board with MicroPython firmware installed –
@@ -46,6 +48,8 @@ For the ESP32-S3 tests, the following requirements must be met:
 * A USB-A to USB-C cable to connect the board to the host.
 * Adjust the **${PORT}** variable to your configuration in the *test_sets/ESP32-S3/variables.robot*
   file.
+
+For the other tests, an internet connection is required.
 
 ### Steps to run tests
 
@@ -64,6 +68,7 @@ To execute the tests, follow these steps:
     python3 -m venv venv
     source venv/bin/activate
     pip install -r requirements.txt
+    rfbrowser init
     ```
 
 1. Run tests for a specific module
@@ -85,6 +90,12 @@ To execute the tests, follow these steps:
         ```
         robot test_sets/reqresAPI/tests.robot
         ```
+    
+    * Youtube tests:
+
+        ```
+        robot test_sets/reqresAPI/tests.robot
+        ```
 
 ## Objects under Tests
 
@@ -99,3 +110,6 @@ The project includes automated tests for different types of objects:
 
 1. **ReqRes API**: Tests for ReqRes, a mock REST API used for testing. The tests validate HTTP
     responses, status codes, and data integrity.
+
+1. **Youtube**: World-famous website for sharing content, mainly video. Creation of tests in
+    progress.
