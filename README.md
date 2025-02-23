@@ -94,7 +94,7 @@ To execute the tests, follow these steps:
     * Youtube tests:
 
         ```
-        robot test_sets/reqresAPI/tests.robot
+        robot test_sets/youtube/tests.robot
         ```
 
 ## Objects under Tests
