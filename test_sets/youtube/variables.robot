@@ -7,3 +7,5 @@ ${MUSIC_TAB}             css=tp-yt-paper-item:has-text("Music") >> nth=0
 ${MUSIC_TITILE}          css=yt-formatted-string#title:has-text("Music")
 ${VIDEO_ID}              id=thumbnail
 ${MUSIC_ID}              id=content
+${MOVIES_TAB}             css=tp-yt-paper-item:has-text("Movies")
+${MOVIES_TITILE}          css=h1 span:has-text("Movies")
