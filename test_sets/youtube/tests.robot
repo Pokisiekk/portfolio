@@ -18,3 +18,10 @@ YT-02 Check Music Page
     Wait For Elements State    ${MUSIC_TITILE}    visible
     ${video_count}    Get Element Count    ${MUSIC_ID}
     Should Be True    ${video_count} > 10
+
+YT-03 Check Movies Page
+    [Documentation]    Checks that movies page on youtube is displayed correctly.
+    Click    ${MOVIES_TAB}
+    Wait For Elements State    ${MOVIES_TITILE}    visible
+    ${video_count}    Get Element Count    ${VIDEO_ID}
+    Should Be True    ${video_count} > 5
