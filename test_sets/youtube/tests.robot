@@ -25,3 +25,10 @@ YT-03 Check Movies Page
     Wait For Elements State    ${MOVIES_TITILE}    visible
     ${video_count}    Get Element Count    ${VIDEO_ID}
     Should Be True    ${video_count} > 5
+
+YT-04 Check Live Page
+    [Documentation]    Checks that live page on youtube is displayed correctly.
+    Click    ${LIVE_TAB}
+    Wait For Elements State    ${LIVE_TITILE}    visible
+    ${video_count}    Get Element Count    ${VIDEO_ID}
+    Should Be True    ${video_count} > 10
