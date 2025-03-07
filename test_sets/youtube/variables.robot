@@ -15,3 +15,6 @@ ${LIVE_TITILE}           css=h1 span:has-text("Live")
 ${SEARCH_ITERATIONS}     10
 ${INPUT_SEARCH}          css=input[name="search_query"]
 ${SEARCH_BUTTON}         css=button.ytSearchboxComponentSearchButton
+${SUBSCRIBE_BUTTON}      css=button[aria-label="Subscribe"]
+${SUBSCRIBE_POPUP}       css=ytd-modal-with-title-and-button-renderer
+${SUBSCRIBE_ALERT}       Sign in to subscribe to this channel.
