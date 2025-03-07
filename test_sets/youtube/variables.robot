@@ -20,5 +20,7 @@ ${SUBSCRIBE_ALERT}           Sign in to subscribe to this channel.
 ${ALERT_POPUP}               css=ytd-modal-with-title-and-button-renderer
 ${FIRST_MUSIC}               css=a.yt-lockup-view-model-wiz__content-image >> nth=0
 ${VIDEO_ON}                  () => !document.querySelector('video.html5-main-video').paused
+${VIDEO_STOPPED}             () => document.querySelector('video.html5-main-video').paused
+${VIDEO_MAIN}                css=video.html5-main-video
 ${COMMENT_PLACEHOLDER}       id=placeholder-area
 ${COMMENT_ALERT}             Sign in to continue
