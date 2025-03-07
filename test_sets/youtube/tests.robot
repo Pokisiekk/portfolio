@@ -77,3 +77,14 @@ YT-07 Comment Without Logging
     Wait For Elements State    ${ALERT_POPUP}    visible
     ${text}    Get Text    ${ALERT_POPUP} #content
     Should Be Equal As Strings    ${text}    ${COMMENT_ALERT}
+
+YT-08 Start And Stop Video
+    [Documentation]    Checks that stopping and starting a video on youtube video works by clicking on the video.
+    Click    ${MUSIC_TAB}
+    Wait For Elements State    ${FIRST_MUSIC}    visible
+    Click    ${FIRST_MUSIC}
+    Wait For Function    ${VIDEO_ON}
+    Click    ${VIDEO_MAIN}
+    Wait For Function    ${VIDEO_STOPPED}
+    Click    ${VIDEO_MAIN}
+    Wait For Function    ${VIDEO_ON}
