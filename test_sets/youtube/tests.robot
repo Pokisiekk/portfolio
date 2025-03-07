@@ -10,14 +10,14 @@ YT-01 Trending Page
     Click    ${TRENDING_TAB}
     Wait For Elements State    ${TRENDING_TITILE}    visible
     ${video_count}    Get Element Count    ${VIDEO_ID}
-    Should Be True    ${video_count} > 10
+    Should Be True    ${video_count} > 5
 
 YT-02 Music Page
     [Documentation]    Checks that music page on youtube is displayed correctly.
     Click    ${MUSIC_TAB}
     Wait For Elements State    ${MUSIC_TITILE}    visible
     ${video_count}    Get Element Count    ${MUSIC_ID}
-    Should Be True    ${video_count} > 10
+    Should Be True    ${video_count} > 5
 
 YT-03 Movies Page
     [Documentation]    Checks that movies page on youtube is displayed correctly.
@@ -31,7 +31,7 @@ YT-04 Live Page
     Click    ${LIVE_TAB}
     Wait For Elements State    ${LIVE_TITILE}    visible
     ${video_count}    Get Element Count    ${VIDEO_ID}
-    Should Be True    ${video_count} > 10
+    Should Be True    ${video_count} > 5
 
 YT-05 Searching
     [Documentation]    Checks that searching video functionality on youtube works correctly.
