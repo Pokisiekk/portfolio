@@ -102,14 +102,15 @@ To execute the tests, follow these steps:
 The project includes automated tests for different types of objects:
 
 1. **ESP32-S3**: Tests related to the ESP32-S3 microcontroller, including firmware validation,
-    connectivity, and functional checks. For testing purposes, MicroPython was installed on the
-    board.
+     connectivity, and functional checks. For testing purposes, MicroPython was installed on the
+     board.
 
 1. **OrangeHRM**: Automated tests for OrangeHRM, an open-source human resource management system.
-    The tests verify functionalities such as login, user management, and role assignments.
+     The tests verify functionalities such as login, user management, and role assignments.
 
 1. **ReqRes API**: Tests for ReqRes, a mock REST API used for testing. The tests validate HTTP
-    responses, status codes, and data integrity.
+     responses, status codes, and data integrity.
 
-1. **Youtube**: World-famous website for sharing content, mainly video. Creation of tests in
-    progress.
+1. **Youtube**: World-famous website for sharing content, mainly video. The tests check the loading
+     of individual tabs, video operations and checking the capabilities of some basic
+     functionalities.
