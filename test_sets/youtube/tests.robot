@@ -55,7 +55,8 @@ YT-05 Searching
     END
 
 YT-06 Subscription Without Logging
-    [Documentation]    Checks that subscription functionality on youtube is possible without a logged in account.
+    [Documentation]    Checks that subscription functionality on youtube is possible without a
+    ...                logged in account.
     Click    ${TRENDING_TAB}
     Wait For Elements State    ${FIRST_VIDEO}    visible
     Click    ${FIRST_VIDEO}
@@ -66,7 +67,8 @@ YT-06 Subscription Without Logging
     Should Be Equal As Strings    ${text}    ${SUBSCRIBE_ALERT}
 
 YT-07 Comment Without Logging
-    [Documentation]    Checks that commenting videos on youtube is possible without a logged in account.
+    [Documentation]    Checks that commenting videos on youtube is possible without a logged in
+    ...                account.
     Click    ${MUSIC_TAB}
     Wait For Elements State    ${FIRST_MUSIC}    visible
     Click    ${FIRST_MUSIC}
@@ -79,7 +81,8 @@ YT-07 Comment Without Logging
     Should Be Equal As Strings    ${text}    ${COMMENT_ALERT}
 
 YT-08 Start And Stop Video
-    [Documentation]    Checks that stopping and starting a video on youtube video works by clicking on the video.
+    [Documentation]    Checks that stopping and starting a video on youtube video works by clicking
+    ...                on the video.
     Click    ${MUSIC_TAB}
     Wait For Elements State    ${FIRST_MUSIC}    visible
     Click    ${FIRST_MUSIC}
