@@ -53,3 +53,14 @@ YT-05 Searching
             Wait For Elements State    ${FIRST_VIDEO}    visible
         END
     END
+
+YT-06 Subscription Without Logging
+    [Documentation]    Checks that subscription functionality on youtube is possible without a logged in account.
+    Click    ${TRENDING_TAB}
+    Wait For Elements State    ${FIRST_VIDEO}    visible
+    Click    ${FIRST_VIDEO}
+    Wait For Elements State    ${SUBSCRIBE_BUTTON}    visible
+    Click    ${SUBSCRIBE_BUTTON}
+    Wait For Elements State    ${SUBSCRIBE_POPUP}    visible
+    ${text}    Get Text    ${SUBSCRIBE_POPUP} #content
+    Should Be Equal As Strings    ${text}    ${SUBSCRIBE_ALERT}
