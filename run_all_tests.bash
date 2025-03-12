@@ -9,13 +9,15 @@ TEST_SETS=(
 
 BASE_DIR="test_sets"
 LOGS_DIR="logs"
+TEMP_VENV=$(mktemp -d)
 
 mkdir -p "${LOGS_DIR}"
+python -m venv "$TEMP_VENV"
 
 if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then
-    VENV_ACTIVATE=".venv/Scripts/activate"
+    VENV_ACTIVATE="$TEMP_VENV/Scripts/activate"
 else
-    VENV_ACTIVATE=".venv/bin/activate"
+    VENV_ACTIVATE="$TEMP_VENV/bin/activate"
 fi
 
 if [ -f "$VENV_ACTIVATE" ]; then
@@ -44,3 +46,6 @@ for TEST_SET in "${TEST_SETS[@]}"; do
 done
 
 echo "All tests completed."
+
+deactivate
+rm -rf "$TEMP_VENV"
