@@ -15,6 +15,7 @@ The structure is as follows:
 .
 ├── README.md               # Project documentation
 ├── requirements.txt        # Dependencies required to run the tests
+├── run_all_tests.bash      # Script to run all tests
 └── test_sets               # Directory containing test suites
     ├── ESP32-S3            # Files related to ESP32-S3 microcontroller
     │   ├── keywords.robot  # Custom keywords for test automation
@@ -55,14 +56,14 @@ For the other tests, an internet connection is required.
 
 To execute the tests, follow these steps:
 
-1. Clone the repository
+1. Clone the repository:
 
     ```
     git clone https://github.com/Pokisiekk/portfolio.git
     cd portfolio
     ```
 
-1. Set up the test environment
+1. Set up the test environment:
 
     ```
     python3 -m venv venv
@@ -71,7 +72,7 @@ To execute the tests, follow these steps:
     rfbrowser init
     ```
 
-1. Run tests for a specific module
+1. Run tests for a specific module:
 
     * ESP32-S3 tests:
 
@@ -96,6 +97,17 @@ To execute the tests, follow these steps:
         ```
         robot test_sets/youtube/tests.robot
         ```
+
+### Test Script
+
+The repository contains a script(*run_all_tests.bash*) that creates a temporary virtual environment,
+installs the required libraries and dependencies, and then runs all the tests.
+
+It is also adaptad to run on Windows by running it in the Git bash:
+
+ ```
+bash run_all_tests.bash
+```
 
 ## Objects under Tests
 
