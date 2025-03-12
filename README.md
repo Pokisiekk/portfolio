@@ -111,18 +111,23 @@ bash run_all_tests.bash
 
 ## Objects under Tests
 
-The project includes automated tests for different types of objects:
+The project includes automated tests for different types of objects using different libraries:
 
-1. **ESP32-S3**: Tests related to the ESP32-S3 microcontroller, including firmware validation,
+1. **ESP32-S3**: The tests related to the ESP32-S3 microcontroller, including firmware validation,
      connectivity, and functional checks. For testing purposes, MicroPython was installed on the
-     board.
+     board. Tests are based on the
+     [SerialLibrary](https://github.com/whosaysni/robotframework-seriallibrary).
 
 1. **OrangeHRM**: Automated tests for OrangeHRM, an open-source human resource management system.
-     The tests verify functionalities such as login, user management, and role assignments.
+     The tests verify functionalities such as login, user management, and role assignments. Tests
+     are based on the
+     [SeleniumLibrary](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html).
 
-1. **ReqRes API**: Tests for ReqRes, a mock REST API used for testing. The tests validate HTTP
-     responses, status codes, and data integrity.
+1. **ReqRes API**: The tests for ReqRes, a mock REST API used for testing. Tests validate HTTP
+     responses, status codes, and data integrity. Tests are based on the
+     [RequestsLibrary](https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html).
 
 1. **Youtube**: World-famous website for sharing content, mainly video. The tests check the loading
      of individual tabs, video operations and checking the capabilities of some basic
-     functionalities.
+     functionalities. Tests are based on the
+     [Browser](https://marketsquare.github.io/robotframework-browser/Browser.html) library.
