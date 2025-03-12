@@ -1,9 +1,9 @@
 #!/bin/bash
 
 TEST_SETS=(
-    "ESP32-S3"
+    "reqresAPI" 
     "orangeHRM"
-    "reqresAPI"
+    "ESP32-S3"
     "youtube"
 )
 
