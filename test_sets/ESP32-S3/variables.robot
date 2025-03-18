@@ -1,7 +1,7 @@
 *** Variables ***
-${ENTER}                 \x0D\x0A
-${PROMPT}                >>>
-${PORT}                  /dev/ttyACM0
+${ENTER}                 \r\n  #\x0D\x0A - on Linux
+${PROMPT}                >>>\r\n  #>>> - on Linux
+${PORT}                  COM5  #/dev/ttyACM0 - on Linux
 ${BAUDRATE}              115200
 ${ENCODING}              utf-8
 ${MICROPYTHON_VERSION}   1.24.1
