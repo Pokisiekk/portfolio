@@ -2,6 +2,7 @@
 Library         Collections
 Library         String
 Library         Process
+Library         OperatingSystem
 Resource        variables.robot
 Library         SerialLibrary    ${PORT}    baudrate=${BAUDRATE}    encoding=${ENCODING}
 
@@ -41,3 +42,14 @@ Setup Wifi Connection
     Execute command in MicroPython    wlan = network.WLAN(network.STA_IF); wlan.active(True)
     Execute command in MicroPython    wlan.connect('${WIFI_NAME}', '${WIFI_PASSWORD}')
     Wait Until Keyword Succeeds    15s    1s    Check Wifi Connection
+
+Ping
+    [Documentation]    Executes a single ping command, adapted for use on Windows and Linux.
+    [Arguments]    ${ip}
+    ${os}=    Get Environment Variable    OS
+    IF  "Windows" in "${os}"
+        ${result}    Run Process    ping -n 1 ${ip}    shell=True    timeout=5
+    ELSE
+        ${result}    Run Process    ping -c 1 ${ip}    shell=True    timeout=5
+    END
+    RETURN    ${result}
