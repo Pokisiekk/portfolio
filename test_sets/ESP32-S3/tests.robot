@@ -58,6 +58,5 @@ ES-08 Check Wifi
     ...                on ESP32 with Micropython.
     Setup Wifi Connection
     ${ip}    Execute command in MicroPython    print(wlan.ifconfig()[0])
-    ${result}    Run Process    ping -c 1 ${ip}    shell=True    timeout=5
-    Log    ${result.stdout}
-    Should Contain    ${result.stdout}    1 packets transmitted, 1 received, 0% packet loss
+    ${result}    Ping    ${ip}
+    Should Contain    ${result.stdout}    Packets: Sent = 1, Received = 1, Lost = 0 (0% loss)

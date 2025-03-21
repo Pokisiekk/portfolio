@@ -47,8 +47,7 @@ For the ESP32-S3 tests, the following requirements must be met:
 * An ESP32-S3 board with MicroPython firmware installed –
   [MicroPython](https://micropython.org/download/ESP32_GENERIC_S3/).
 * A USB-A to USB-C cable to connect the board to the host.
-* Adjust the **${PORT}** variable to your configuration in the *test_sets/ESP32-S3/variables.robot*
-  file.
+* Adjust the *test_sets/ESP32-S3/variables.robot* file to your configuration and operating system.
 
 For the other tests, an internet connection is required.
 
