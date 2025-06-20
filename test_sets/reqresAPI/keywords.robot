@@ -14,7 +14,8 @@ Check Reqres API Availability
 Setup Reqres API
     [Documentation]    Creates a session and checks the reqres API availability.
     Disable Warnings
-    Create Session    ${SESSION}    ${REQRES_URL}
+    ${headers}=    Create Dictionary    x-api-key=${API_KEY}
+    Create Session    ${SESSION}    ${REQRES_URL}    ${headers}
     Check Reqres API Availability
 
 Post Request With Dictionary

@@ -1,6 +1,7 @@
 *** Variables ***
 ${REQRES_URL}            https://reqres.in/api
 ${SESSION}               reqres
+${API_KEY}               reqres-free-v1
 ${TOKEN}                 QpwL5tke4Pnpja7X4
 ${EMAIL}                 eve.holt@reqres.in
 
