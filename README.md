@@ -97,16 +97,11 @@ To execute the tests, follow these steps:
         robot test_sets/youtube/tests.robot
         ```
 
-### Test Script
+### Test Scripts
 
-The repository contains a script(*run_all_tests.bash*) that creates a temporary virtual environment,
-installs the required libraries and dependencies, and then runs all the tests.
-
-It is also adaptad to run on Windows by running it in the Git bash:
-
- ```
-bash run_all_tests.bash
-```
+The repository contains a scripts *run_all_tests.bash* and *run_all_tests.ps1* that create a
+temporary virtual environment, installs the required libraries and dependencies, and then runs all
+the tests. The scripts are identical, so should use the one that which is compatible with your OS.
 
 ## Objects under Tests
 
