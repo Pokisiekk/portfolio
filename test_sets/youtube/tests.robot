@@ -73,7 +73,7 @@ YT-07 Comment Without Logging
     Wait For Elements State    ${FIRST_MUSIC}    visible
     Click    ${FIRST_MUSIC}
     Wait For Function    ${VIDEO_ON}
-    Scroll By    ${None}    300    0    smooth
+    Scroll By    ${None}    600    0    smooth
     Wait For Elements State    ${COMMENT_PLACEHOLDER}    visible
     Click    ${COMMENT_PLACEHOLDER}
     Wait For Elements State    ${ALERT_POPUP}    visible
