@@ -16,7 +16,7 @@ ${MUSIC_TITILE}              css=yt-formatted-string#title:has-text("Music")
 ${FIRST_MUSIC}               css=a.yt-lockup-view-model-wiz__content-image >> nth=0
 ${MUSIC_ID}                  id=content
 ${VIDEO_ID}                  id=thumbnail
-${FIRST_VIDEO}               id=thumbnail >> nth=0
+${FIRST_VIDEO}               id=video-title >> nth=0
 ${VIDEO_ON}                  () => !document.querySelector('video.html5-main-video').paused
 ${VIDEO_STOPPED}             () => document.querySelector('video.html5-main-video').paused
 ${VIDEO_MAIN}                css=video.html5-main-video
