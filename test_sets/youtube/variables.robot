@@ -22,6 +22,6 @@ ${VIDEO_STOPPED}             () => document.querySelector('video.html5-main-vide
 ${VIDEO_MAIN}                css=video.html5-main-video
 ${INPUT_SEARCH}              css=input[name="search_query"]
 ${SEARCH_BUTTON}             css=button.ytSearchboxComponentSearchButton
-${SUBSCRIBE_BUTTON}          css=button[aria-label="Subscribe"]
+${SUBSCRIBE_BUTTON}          css=#subscribe-button >> text=Subscribe
 ${ALERT_POPUP}               css=ytd-modal-with-title-and-button-renderer
 ${COMMENT_PLACEHOLDER}       id=placeholder-area
