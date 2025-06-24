@@ -19,9 +19,9 @@ ${VIDEO_ID}                  id=thumbnail
 ${FIRST_VIDEO}               id=video-title >> nth=0
 ${VIDEO_ON}                  () => document.querySelectorAll('video.html5-main-video')[0]?.paused === false
 ${VIDEO_STOPPED}             () => document.querySelectorAll('video.html5-main-video')[0]?.paused === true
-${VIDEO_MAIN}                css=video.html5-main-video
+${VIDEO_MAIN}                css=#movie_player video.html5-main-video
 ${INPUT_SEARCH}              css=input[name="search_query"]
 ${SEARCH_BUTTON}             css=button.ytSearchboxComponentSearchButton
-${SUBSCRIBE_BUTTON}          css=#subscribe-button >> text=Subscribe
+${SUBSCRIBE_BUTTON}          css=#subscribe-button >> text=/^Subscribe$/
 ${ALERT_POPUP}               css=ytd-modal-with-title-and-button-renderer
 ${COMMENT_PLACEHOLDER}       id=placeholder-area
