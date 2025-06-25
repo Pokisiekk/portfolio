@@ -1,5 +1,5 @@
 *** Settings ***
-Resource            keywords.robot
+Resource            resources/keywords.robot
 
 Test Setup          Open youtube
 Test Teardown       Close Browser
