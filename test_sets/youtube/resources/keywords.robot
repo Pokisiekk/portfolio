@@ -2,6 +2,8 @@
 Library         Browser
 Library         custom_keywords.py
 Resource        variables.robot
+Resource        ../pages/base_page.robot
+Resource        ../pages/video_page.robot
 
 *** Keywords ***
 
