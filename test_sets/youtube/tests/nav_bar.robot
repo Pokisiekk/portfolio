@@ -1,6 +1,6 @@
 *** Settings ***
-Resource            resources/keywords.robot
-Resource            pages/base_page.robot
+Resource            ../resources/keywords.robot
+Resource            ../pages/base_page.robot
 
 Test Setup          Open youtube
 Test Teardown       Close Browser
