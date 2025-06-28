@@ -8,3 +8,7 @@ ${VIDEO_MAIN}                css=#movie_player video.html5-main-video
 ${SUBSCRIBE_BUTTON}          css=#subscribe-button >> text=/^Subscribe$/
 ${ALERT_POPUP}               css=ytd-modal-with-title-and-button-renderer
 ${COMMENT_PLACEHOLDER}       id=placeholder-area
+
+${SEARCH_ITERATIONS}         10
+${COMMENT_ALERT}             Sign in to continue
+${SUBSCRIBE_ALERT}           Sign in to subscribe to this channel.
