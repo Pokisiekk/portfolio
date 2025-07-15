@@ -1,5 +1,4 @@
 *** Variables ***
-${VIDEO_ID}                  id=thumbnail
 ${FIRST_VIDEO}               id=video-title >> nth=0
 ${VIDEO_ON}                  () => document.querySelectorAll('video.html5-main-video')[0]?.paused === false
 ${VIDEO_STOPPED}             () => document.querySelectorAll('video.html5-main-video')[0]?.paused === true
