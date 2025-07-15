@@ -9,28 +9,20 @@ Test Teardown       Close Browser
 *** Test Cases ***
 YTN-01 Trending Page
     [Documentation]    Checks that trendling page on youtube is displayed correctly.
-    Click    ${TRENDING_TAB}
-    Wait For Elements State    ${TRENDING_TITILE}    visible
-    ${video_count}    Get Element Count    ${VIDEO_ID}
-    Should Be True    ${video_count} > 5
+    Select Trending From Nav Bar
+    Check Trending Page
 
 YTN-02 Music Page
     [Documentation]    Checks that music page on youtube is displayed correctly.
-    Click    ${MUSIC_TAB}
-    Wait For Elements State    ${MUSIC_TITILE}    visible
-    ${video_count}    Get Element Count    ${MUSIC_ID}
-    Should Be True    ${video_count} > 5
+    Select Music From Nav Bar
+    Check Music Page
 
 YTN-03 Movies Page
     [Documentation]    Checks that movies page on youtube is displayed correctly.
-    Click    ${MOVIES_TAB}
-    Wait For Elements State    ${MOVIES_TITILE}    visible
-    ${video_count}    Get Element Count    ${VIDEO_ID}
-    Should Be True    ${video_count} > 5
+    Select Movies From Nav Bar
+    Check Movies Page
 
 YTN-04 Live Page
     [Documentation]    Checks that live page on youtube is displayed correctly.
-    Click    ${LIVE_TAB}
-    Wait For Elements State    ${LIVE_TITILE}    visible
-    ${video_count}    Get Element Count    ${VIDEO_ID}
-    Should Be True    ${video_count} > 5
+    Select Live From Nav Bar
+    Check Live Page
