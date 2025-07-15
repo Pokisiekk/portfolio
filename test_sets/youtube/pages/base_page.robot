@@ -10,3 +10,30 @@ ${TRENDING_TITILE}           css=h1 span:has-text("Trending")
 ${MOVIES_TITILE}             css=h1 span:has-text("Movies")
 ${LIVE_TITILE}               css=h1 span:has-text("Live")
 ${MUSIC_TITILE}              css=yt-formatted-string#title:has-text("Music")
+${VIDEO_ID}                  id=thumbnail
+
+*** Keywords ***
+Check Trending Page
+    [Documentation]    Checks that trendling page on youtube is displayed correctly.
+    Wait For Elements State    ${TRENDING_TITILE}    visible
+    ${video_count}    Get Element Count    ${VIDEO_ID}
+    Should Be True    ${video_count} > 5
+
+
+Check Music Page
+    [Documentation]    Checks that music page on youtube is displayed correctly.
+    Wait For Elements State    ${MUSIC_TITILE}    visible
+    ${video_count}    Get Element Count    ${MUSIC_ID}
+    Should Be True    ${video_count} > 5
+
+Check Movies Page
+    [Documentation]    Checks that movies page on youtube is displayed correctly.
+    Wait For Elements State    ${MOVIES_TITILE}    visible
+    ${video_count}    Get Element Count    ${VIDEO_ID}
+    Should Be True    ${video_count} > 5
+
+Check Live Page
+    [Documentation]    Checks that live page on youtube is displayed correctly.
+    Wait For Elements State    ${LIVE_TITILE}    visible
+    ${video_count}    Get Element Count    ${VIDEO_ID}
+    Should Be True    ${video_count} > 5
