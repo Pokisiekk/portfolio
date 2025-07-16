@@ -1,6 +1,6 @@
 *** Settings ***
-Resource            ../components/nav_bar.robot
-Resource            ../components/search.robot
+Resource            ../components/nav_bar_component.robot
+Resource            ../components/search_component.robot
 
 *** Variables ***
 ${ACCEPT_ALL_BTN}            css=button:has-text("Accept all")
