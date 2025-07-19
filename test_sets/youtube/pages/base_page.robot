@@ -1,6 +1,7 @@
 *** Settings ***
-Resource            ../components/nav_bar_component.robot
-Resource            ../components/search_component.robot
+Library         Browser
+Resource        ../components/nav_bar_component.robot
+Resource        ../components/search_component.robot
 
 *** Variables ***
 ${ACCEPT_ALL_BTN}            css=button:has-text("Accept all")
@@ -11,6 +12,7 @@ ${MOVIES_TITILE}             css=h1 span:has-text("Movies")
 ${LIVE_TITILE}               css=h1 span:has-text("Live")
 ${MUSIC_TITILE}              css=yt-formatted-string#title:has-text("Music")
 ${VIDEO_ID}                  id=thumbnail
+${MUSIC_ID}                  id=content
 
 *** Keywords ***
 Check Trending Page
@@ -18,7 +20,6 @@ Check Trending Page
     Wait For Elements State    ${TRENDING_TITILE}    visible
     ${video_count}    Get Element Count    ${VIDEO_ID}
     Should Be True    ${video_count} > 5
-
 
 Check Music Page
     [Documentation]    Checks that music page on youtube is displayed correctly.
