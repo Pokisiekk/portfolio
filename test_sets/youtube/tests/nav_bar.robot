@@ -2,6 +2,7 @@
 Resource            ../resources/keywords.robot
 Resource            ../pages/base_page.robot
 Resource            ../pages/music_page.robot
+Resource            ../pages/video_page.robot
 
 Test Setup          Open youtube
 Test Teardown       Close Browser
@@ -26,3 +27,8 @@ YTN-04 Live Page
     [Documentation]    Checks that live page on youtube is displayed correctly.
     Select Live From Nav Bar
     Check Live Page
+
+YTN-05 Shorts Page
+    [Documentation]    Checks that shors page on youtube is displayed correctly.
+    Select Shorts From Nav Bar
+    Wait For Function    ${VIDEO_ON}
