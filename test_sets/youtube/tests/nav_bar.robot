@@ -31,4 +31,4 @@ YTN-04 Live Page
 YTN-05 Shorts Page
     [Documentation]    Checks that shors page on youtube is displayed correctly.
     Select Shorts From Nav Bar
-    Wait For Function    ${VIDEO_ON}
+    Wait For Function    ${SHORT_ON}
