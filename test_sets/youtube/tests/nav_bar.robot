@@ -44,3 +44,9 @@ YTN-07 You Page
     ...                user.
     Select You From Nav Bar
     Check You Page
+
+YTN-08 History Page
+    [Documentation]    Checks that History page on youtube is displayed correctly for a
+    ...                non-logged-in user.
+    Select History From Nav Bar
+    Check History Page
