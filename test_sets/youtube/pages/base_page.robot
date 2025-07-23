@@ -13,8 +13,9 @@ ${LIVE_TITILE}               css=h1 span:has-text("Live")
 ${MUSIC_TITILE}              css=yt-formatted-string#title:has-text("Music")
 ${VIDEO_ID}                  id=thumbnail
 ${MUSIC_ID}                  id=content
-${SUB_UNLOGGED}              css=yt-formatted-string.promo-body-text
+${UNLOGGED_TEXT}             css=yt-formatted-string.promo-body-text
 ${SUB_UNLOGGED_TEXT}         Sign in to see updates from your favorite YouTube channels
+${YOU_UNLOGGED_TEXT}         Sign in to access videos that you’ve liked or saved
 
 *** Keywords ***
 Check Trending Page
@@ -44,6 +45,13 @@ Check Live Page
 Check Subscriptions Page
     [Documentation]    Checks that Subscriptions page on youtube is displayed correctly for a
     ...                non-logged-in user.
-    Wait For Elements State    ${SUB_UNLOGGED}    visible
-    ${text}    Get Text    ${SUB_UNLOGGED}
+    Wait For Elements State    ${UNLOGGED_TEXT}    visible
+    ${text}    Get Text    ${UNLOGGED_TEXT}
     Should Be Equal As Strings    ${text}    ${SUB_UNLOGGED_TEXT}
+
+Check You Page
+    [Documentation]    Checks that You page on youtube is displayed correctly for a non-logged-in
+    ...                user.
+    Wait For Elements State    ${UNLOGGED_TEXT}    visible
+    ${text}    Get Text    ${UNLOGGED_TEXT}
+    Should Be Equal As Strings    ${text}    ${YOU_UNLOGGED_TEXT}
