@@ -19,6 +19,7 @@ ${YOU_UNLOGGED_TEXT}         Sign in to access videos that you’ve liked or sav
 ${HISTORY_UNLOGGED}          css=span.style-scope.yt-formatted-string >> nth=0
 ${HISTORY_UNLOGGED_TEXT}     Watch history isn't viewable when signed out.
 ${GAMING_TITILE}             css=h1 span:has-text("Gaming")
+${NEWS_TITILE}               css=h1 span:has-text("News")
 
 *** Keywords ***
 Check Trending Page
@@ -69,5 +70,11 @@ Check History Page
 Check Gaming Page
     [Documentation]    Checks that gaming page on youtube is displayed correctly.
     Wait For Elements State    ${GAMING_TITILE}    visible
+    ${video_count}    Get Element Count    ${VIDEO_ID}
+    Should Be True    ${video_count} > 5
+
+Check News Page
+    [Documentation]    Checks that news page on youtube is displayed correctly.
+    Wait For Elements State    ${NEWS_TITILE}    visible
     ${video_count}    Get Element Count    ${VIDEO_ID}
     Should Be True    ${video_count} > 5
