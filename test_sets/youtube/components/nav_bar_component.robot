@@ -9,6 +9,7 @@ ${MUSIC_TAB}                 css=tp-yt-paper-item:has-text("Music") >> nth=0
 ${SHORTS_TAB}                css=tp-yt-paper-item:has-text("Shorts")
 ${SUBSCRIPTIONS_TAB}         css=tp-yt-paper-item:has-text("Subscriptions")
 ${YOU_TAB}                   css=tp-yt-paper-item:has-text("You") >> nth=0
+${HISTORY_TAB}               css=tp-yt-paper-item:has-text("History") >> nth=0
 
 *** Keywords ***
 Select Trending From Nav Bar
@@ -38,3 +39,7 @@ Select Subscriptions From Nav Bar
 Select You From Nav Bar
     [Documentation]    Selects "You" from navigation bar.
     Click    ${YOU_TAB}
+
+Select History From Nav Bar
+    [Documentation]    Selects "History" from navigation bar.
+    Click    ${HISTORY_TAB}
