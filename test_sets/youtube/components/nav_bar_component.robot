@@ -10,6 +10,7 @@ ${SHORTS_TAB}                css=tp-yt-paper-item:has-text("Shorts")
 ${SUBSCRIPTIONS_TAB}         css=tp-yt-paper-item:has-text("Subscriptions")
 ${YOU_TAB}                   css=tp-yt-paper-item:has-text("You") >> nth=0
 ${HISTORY_TAB}               css=tp-yt-paper-item:has-text("History") >> nth=0
+${GAMING_TAB}                css=tp-yt-paper-item:has-text("Gaming")
 
 *** Keywords ***
 Select Trending From Nav Bar
@@ -43,3 +44,7 @@ Select You From Nav Bar
 Select History From Nav Bar
     [Documentation]    Selects "History" from navigation bar.
     Click    ${HISTORY_TAB}
+
+Select Gaming From Nav Bar
+    [Documentation]    Selects "Gaming" from navigation bar.
+    Click    ${GAMING_TAB}
