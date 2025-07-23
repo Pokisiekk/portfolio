@@ -7,6 +7,7 @@ ${MOVIES_TAB}                css=tp-yt-paper-item:has-text("Movies")
 ${LIVE_TAB}                  css=tp-yt-paper-item:has-text("Live")
 ${MUSIC_TAB}                 css=tp-yt-paper-item:has-text("Music") >> nth=0
 ${SHORTS_TAB}                css=tp-yt-paper-item:has-text("Shorts")
+${SUBSCRIPTIONS_TAB}         css=tp-yt-paper-item:has-text("Subscriptions")
 
 *** Keywords ***
 Select Trending From Nav Bar
@@ -28,3 +29,7 @@ Select Live From Nav Bar
 Select Shorts From Nav Bar
     [Documentation]    Selects "Live" from navigation bar.
     Click    ${SHORTS_TAB}
+
+Select Subscriptions From Nav Bar
+    [Documentation]    Selects "Subscriptions" from navigation bar.
+    Click    ${SUBSCRIPTIONS_TAB}
