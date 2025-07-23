@@ -20,6 +20,7 @@ ${HISTORY_UNLOGGED}          css=span.style-scope.yt-formatted-string >> nth=0
 ${HISTORY_UNLOGGED_TEXT}     Watch history isn't viewable when signed out.
 ${GAMING_TITILE}             css=h1 span:has-text("Gaming")
 ${NEWS_TITILE}               css=h1 span:has-text("News")
+${SPORTS_TITILE}             css=yt-formatted-string#title:has-text("Sports")
 
 *** Keywords ***
 Check Trending Page
@@ -76,5 +77,11 @@ Check Gaming Page
 Check News Page
     [Documentation]    Checks that news page on youtube is displayed correctly.
     Wait For Elements State    ${NEWS_TITILE}    visible
+    ${video_count}    Get Element Count    ${VIDEO_ID}
+    Should Be True    ${video_count} > 5
+
+Check Sports Page
+    [Documentation]    Checks that sports page on youtube is displayed correctly.
+    Wait For Elements State    ${SPORTS_TITILE}    visible
     ${video_count}    Get Element Count    ${VIDEO_ID}
     Should Be True    ${video_count} > 5
