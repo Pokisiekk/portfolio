@@ -50,3 +50,9 @@ YTN-08 History Page
     ...                non-logged-in user.
     Select History From Nav Bar
     Check History Page
+
+YTN-09 Gaming Page
+    [Documentation]    Checks that Gaming page on youtube is displayed correctly for a
+    ...                non-logged-in user.
+    Select Gaming From Nav Bar
+    Check Gaming Page
