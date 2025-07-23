@@ -56,3 +56,9 @@ YTN-09 Gaming Page
     ...                non-logged-in user.
     Select Gaming From Nav Bar
     Check Gaming Page
+
+YTN-10 News Page
+    [Documentation]    Checks that News page on youtube is displayed correctly for a non-logged-in
+    ...                user.
+    Select News From Nav Bar
+    Check News Page
