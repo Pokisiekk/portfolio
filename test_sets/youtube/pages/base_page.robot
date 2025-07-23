@@ -16,6 +16,8 @@ ${MUSIC_ID}                  id=content
 ${UNLOGGED_TEXT}             css=yt-formatted-string.promo-body-text
 ${SUB_UNLOGGED_TEXT}         Sign in to see updates from your favorite YouTube channels
 ${YOU_UNLOGGED_TEXT}         Sign in to access videos that you’ve liked or saved
+${HISTORY_UNLOGGED}          css=span.style-scope.yt-formatted-string >> nth=0
+${HISTORY_UNLOGGED_TEXT}     Watch history isn't viewable when signed out.
 
 *** Keywords ***
 Check Trending Page
@@ -55,3 +57,10 @@ Check You Page
     Wait For Elements State    ${UNLOGGED_TEXT}    visible
     ${text}    Get Text    ${UNLOGGED_TEXT}
     Should Be Equal As Strings    ${text}    ${YOU_UNLOGGED_TEXT}
+
+Check History Page
+    [Documentation]    Checks that History page on youtube is displayed correctly for a non-logged-in
+    ...                user.
+    Wait For Elements State    ${HISTORY_UNLOGGED}    visible
+    ${text}    Get Text    ${HISTORY_UNLOGGED}
+    Should Be Equal As Strings    ${text}    ${HISTORY_UNLOGGED_TEXT}
