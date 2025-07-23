@@ -39,3 +39,8 @@ YTN-06 Subscriptions Page
     Select Subscriptions From Nav Bar
     Check Subscriptions Page
 
+YTN-07 You Page
+    [Documentation]    Checks that You page on youtube is displayed correctly for a non-logged-in
+    ...                user.
+    Select You From Nav Bar
+    Check You Page
