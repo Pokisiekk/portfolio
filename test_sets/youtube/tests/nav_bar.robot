@@ -62,3 +62,9 @@ YTN-10 News Page
     ...                user.
     Select News From Nav Bar
     Check News Page
+
+YTN-11 Sports Page
+    [Documentation]    Checks that Sports page on youtube is displayed correctly for a non-logged-in
+    ...                user.
+    Select Sports From Nav Bar
+    Check Sports Page
