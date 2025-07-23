@@ -32,3 +32,10 @@ YTN-05 Shorts Page
     [Documentation]    Checks that shors page on youtube is displayed correctly.
     Select Shorts From Nav Bar
     Wait For Function    ${SHORT_ON}
+
+YTN-06 Subscriptions Page
+    [Documentation]    Checks that Subscriptions page on youtube is displayed correctly for a
+    ...                non-logged-in user.
+    Select Subscriptions From Nav Bar
+    Check Subscriptions Page
+
