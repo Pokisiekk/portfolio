@@ -12,6 +12,7 @@ ${YOU_TAB}                   css=tp-yt-paper-item:has-text("You") >> nth=0
 ${HISTORY_TAB}               css=tp-yt-paper-item:has-text("History") >> nth=0
 ${GAMING_TAB}                css=tp-yt-paper-item:has-text("Gaming")
 ${NEWS_TAB}                  css=tp-yt-paper-item:has-text("News")
+${SPORTS_TAB}                css=tp-yt-paper-item:has-text("Sports")
 
 *** Keywords ***
 Select Trending From Nav Bar
@@ -53,3 +54,7 @@ Select Gaming From Nav Bar
 Select News From Nav Bar
     [Documentation]    Selects "News" from navigation bar.
     Click    ${NEWS_TAB}
+
+Select Sports From Nav Bar
+    [Documentation]    Selects "Sports" from navigation bar.
+    Click    ${SPORTS_TAB}
