@@ -12,6 +12,7 @@ ${HISTORY_TAB}               css=tp-yt-paper-item:has-text("History") >> nth=0
 ${GAMING_TAB}                css=tp-yt-paper-item:has-text("Gaming")
 ${NEWS_TAB}                  css=tp-yt-paper-item:has-text("News")
 ${SPORTS_TAB}                css=tp-yt-paper-item:has-text("Sports")
+${PODCASTS_TAB}              css=tp-yt-paper-item:has-text("Podcasts")
 
 *** Keywords ***
 Select Music From Nav Bar
@@ -53,3 +54,7 @@ Select News From Nav Bar
 Select Sports From Nav Bar
     [Documentation]    Selects "Sports" from navigation bar.
     Click    ${SPORTS_TAB}
+
+Select Podcasts From Nav Bar
+    [Documentation]    Selects "Podcasts" from navigation bar.
+    Click    ${PODCASTS_TAB}
