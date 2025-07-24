@@ -8,62 +8,57 @@ Test Setup          Open youtube
 Test Teardown       Close Browser
 
 *** Test Cases ***
-YTN-01 Trending Page
-    [Documentation]    Checks that trendling page on youtube is displayed correctly.
-    Select Trending From Nav Bar
-    Check Trending Page
-
-YTN-02 Music Page
+YTN-01 Music Page
     [Documentation]    Checks that music page on youtube is displayed correctly.
     Select Music From Nav Bar
     Check Music Page
 
-YTN-03 Movies Page
+YTN-02 Movies Page
     [Documentation]    Checks that movies page on youtube is displayed correctly.
     Select Movies From Nav Bar
     Check Movies Page
 
-YTN-04 Live Page
+YTN-03 Live Page
     [Documentation]    Checks that live page on youtube is displayed correctly.
     Select Live From Nav Bar
     Check Live Page
 
-YTN-05 Shorts Page
+YTN-04 Shorts Page
     [Documentation]    Checks that shors page on youtube is displayed correctly.
     Select Shorts From Nav Bar
     Wait For Function    ${SHORT_ON}
 
-YTN-06 Subscriptions Page
+YTN-05 Subscriptions Page
     [Documentation]    Checks that Subscriptions page on youtube is displayed correctly for a
     ...                non-logged-in user.
     Select Subscriptions From Nav Bar
     Check Subscriptions Page
 
-YTN-07 You Page
+YTN-06 You Page
     [Documentation]    Checks that You page on youtube is displayed correctly for a non-logged-in
     ...                user.
     Select You From Nav Bar
     Check You Page
 
-YTN-08 History Page
+YTN-07 History Page
     [Documentation]    Checks that History page on youtube is displayed correctly for a
     ...                non-logged-in user.
     Select History From Nav Bar
     Check History Page
 
-YTN-09 Gaming Page
+YTN-08 Gaming Page
     [Documentation]    Checks that Gaming page on youtube is displayed correctly for a
     ...                non-logged-in user.
     Select Gaming From Nav Bar
     Check Gaming Page
 
-YTN-10 News Page
+YTN-09 News Page
     [Documentation]    Checks that News page on youtube is displayed correctly for a non-logged-in
     ...                user.
     Select News From Nav Bar
     Check News Page
 
-YTN-11 Sports Page
+YTN-10 Sports Page
     [Documentation]    Checks that Sports page on youtube is displayed correctly for a non-logged-in
     ...                user.
     Select Sports From Nav Bar

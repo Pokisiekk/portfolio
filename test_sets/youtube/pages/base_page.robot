@@ -7,7 +7,6 @@ Resource        ../components/search_component.robot
 ${ACCEPT_ALL_BTN}            css=button:has-text("Accept all")
 ${INPUT_SEARCH}              css=input[name="search_query"]
 ${SEARCH_BUTTON}             css=button.ytSearchboxComponentSearchButton
-${TRENDING_TITILE}           css=h1 span:has-text("Trending")
 ${MOVIES_TITILE}             css=h1 span:has-text("Movies")
 ${LIVE_TITILE}               css=h1 span:has-text("Live")
 ${MUSIC_TITILE}              css=yt-formatted-string#title:has-text("Music")
@@ -23,12 +22,6 @@ ${NEWS_TITILE}               css=h1 span:has-text("News")
 ${SPORTS_TITILE}             css=yt-formatted-string#title:has-text("Sports")
 
 *** Keywords ***
-Check Trending Page
-    [Documentation]    Checks that trendling page on youtube is displayed correctly.
-    Wait For Elements State    ${TRENDING_TITILE}    visible
-    ${video_count}    Get Element Count    ${VIDEO_ID}
-    Should Be True    ${video_count} > 5
-
 Check Music Page
     [Documentation]    Checks that music page on youtube is displayed correctly.
     Wait For Elements State    ${MUSIC_TITILE}    visible

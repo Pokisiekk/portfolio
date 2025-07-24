@@ -2,7 +2,6 @@
 Library             Browser
     
 *** Variables ***
-${TRENDING_TAB}              css=tp-yt-paper-item:has-text("Trending")
 ${MOVIES_TAB}                css=tp-yt-paper-item:has-text("Movies")
 ${LIVE_TAB}                  css=tp-yt-paper-item:has-text("Live")
 ${MUSIC_TAB}                 css=tp-yt-paper-item:has-text("Music") >> nth=0
@@ -15,10 +14,6 @@ ${NEWS_TAB}                  css=tp-yt-paper-item:has-text("News")
 ${SPORTS_TAB}                css=tp-yt-paper-item:has-text("Sports")
 
 *** Keywords ***
-Select Trending From Nav Bar
-    [Documentation]    Selects "Trending" from navigation bar.
-    Click    ${TRENDING_TAB}
-
 Select Music From Nav Bar
     [Documentation]    Selects "Music" from navigation bar.
     Click    ${MUSIC_TAB}
