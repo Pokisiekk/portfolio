@@ -65,7 +65,13 @@ YTN-10 Sports Page
     Check Sports Page
 
 YTN-11 Podcasts Page
-    [Documentation]    Checks that Podcasts page on youtube is displayed correctly for a non-logged-in
-    ...                user.
+    [Documentation]    Checks that Podcasts page on youtube is displayed correctly for a
+    ...                non-logged-in user.
     Select Podcasts From Nav Bar
     Check Podcasts Page
+
+YTN-12 Youtube Premium Page
+    [Documentation]    Checks that Youtube Premium page on youtube is displayed correctly for a
+    ...                non-logged-in user.
+    Select Youtube Premium From Nav Bar
+    Check Youtube Premium Page
