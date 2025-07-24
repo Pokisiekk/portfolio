@@ -21,6 +21,7 @@ ${GAMING_TITILE}             css=h1 span:has-text("Gaming")
 ${NEWS_TITILE}               css=h1 span:has-text("News")
 ${SPORTS_TITILE}             css=yt-formatted-string#title:has-text("Sports")
 ${PODCASTS_TITILE}           css=h1 span:has-text("Podcasts")
+${YOUTUBE_PREMIUM_TEXT}      text=YouTube and YouTube Music ad-free, offline, and in the background
 
 *** Keywords ***
 Check Music Page
@@ -85,3 +86,8 @@ Check Podcasts Page
     Wait For Elements State    ${PODCASTS_TITILE}    visible
     ${video_count}    Get Element Count    ${VIDEO_ID}
     Should Be True    ${video_count} > 5
+
+Check Youtube Premium Page
+    [Documentation]    Checks that Youtube Premium page on youtube is displayed correctly for a non-logged-in
+    ...                user.
+    Wait For Elements State    ${YOUTUBE_PREMIUM_TEXT}    visible
