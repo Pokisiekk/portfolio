@@ -63,3 +63,9 @@ YTN-10 Sports Page
     ...                user.
     Select Sports From Nav Bar
     Check Sports Page
+
+YTN-11 Podcasts Page
+    [Documentation]    Checks that Podcasts page on youtube is displayed correctly for a non-logged-in
+    ...                user.
+    Select Podcasts From Nav Bar
+    Check Podcasts Page
