@@ -20,61 +20,68 @@ ${HISTORY_UNLOGGED_TEXT}     Watch history isn't viewable when signed out.
 ${GAMING_TITILE}             css=h1 span:has-text("Gaming")
 ${NEWS_TITILE}               css=h1 span:has-text("News")
 ${SPORTS_TITILE}             css=yt-formatted-string#title:has-text("Sports")
+${PODCASTS_TITILE}           css=h1 span:has-text("Podcasts")
 
 *** Keywords ***
 Check Music Page
-    [Documentation]    Checks that music page on youtube is displayed correctly.
+    [Documentation]    Checks that Music page on youtube is displayed correctly.
     Wait For Elements State    ${MUSIC_TITILE}    visible
     ${video_count}    Get Element Count    ${MUSIC_ID}
     Should Be True    ${video_count} > 5
 
 Check Movies Page
-    [Documentation]    Checks that movies page on youtube is displayed correctly.
+    [Documentation]    Checks that Movies page on youtube is displayed correctly.
     Wait For Elements State    ${MOVIES_TITILE}    visible
     ${video_count}    Get Element Count    ${VIDEO_ID}
     Should Be True    ${video_count} > 5
 
 Check Live Page
-    [Documentation]    Checks that live page on youtube is displayed correctly.
+    [Documentation]    Checks that Live page on youtube is displayed correctly.
     Wait For Elements State    ${LIVE_TITILE}    visible
     ${video_count}    Get Element Count    ${VIDEO_ID}
     Should Be True    ${video_count} > 5
 
 Check Subscriptions Page
-    [Documentation]    Checks that subscriptions page on youtube is displayed correctly for a
+    [Documentation]    Checks that Subscriptions page on youtube is displayed correctly for a
     ...                non-logged-in user.
     Wait For Elements State    ${UNLOGGED_TEXT}    visible
     ${text}    Get Text    ${UNLOGGED_TEXT}
     Should Be Equal As Strings    ${text}    ${SUB_UNLOGGED_TEXT}
 
 Check You Page
-    [Documentation]    Checks that you page on youtube is displayed correctly for a non-logged-in
+    [Documentation]    Checks that You page on youtube is displayed correctly for a non-logged-in
     ...                user.
     Wait For Elements State    ${UNLOGGED_TEXT}    visible
     ${text}    Get Text    ${UNLOGGED_TEXT}
     Should Be Equal As Strings    ${text}    ${YOU_UNLOGGED_TEXT}
 
 Check History Page
-    [Documentation]    Checks that history page on youtube is displayed correctly for a non-logged-in
+    [Documentation]    Checks that History page on youtube is displayed correctly for a non-logged-in
     ...                user.
     Wait For Elements State    ${HISTORY_UNLOGGED}    visible
     ${text}    Get Text    ${HISTORY_UNLOGGED}
     Should Be Equal As Strings    ${text}    ${HISTORY_UNLOGGED_TEXT}
 
 Check Gaming Page
-    [Documentation]    Checks that gaming page on youtube is displayed correctly.
+    [Documentation]    Checks that Gaming page on youtube is displayed correctly.
     Wait For Elements State    ${GAMING_TITILE}    visible
     ${video_count}    Get Element Count    ${VIDEO_ID}
     Should Be True    ${video_count} > 5
 
 Check News Page
-    [Documentation]    Checks that news page on youtube is displayed correctly.
+    [Documentation]    Checks that News page on youtube is displayed correctly.
     Wait For Elements State    ${NEWS_TITILE}    visible
     ${video_count}    Get Element Count    ${VIDEO_ID}
     Should Be True    ${video_count} > 5
 
 Check Sports Page
-    [Documentation]    Checks that sports page on youtube is displayed correctly.
+    [Documentation]    Checks that Sports page on youtube is displayed correctly.
     Wait For Elements State    ${SPORTS_TITILE}    visible
+    ${video_count}    Get Element Count    ${VIDEO_ID}
+    Should Be True    ${video_count} > 5
+
+Check Podcasts Page
+    [Documentation]    Checks that Podcasts page on youtube is displayed correctly.
+    Wait For Elements State    ${PODCASTS_TITILE}    visible
     ${video_count}    Get Element Count    ${VIDEO_ID}
     Should Be True    ${video_count} > 5
