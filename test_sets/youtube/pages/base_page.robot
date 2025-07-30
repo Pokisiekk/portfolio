@@ -22,6 +22,7 @@ ${NEWS_TITILE}               css=h1 span:has-text("News")
 ${SPORTS_TITILE}             css=yt-formatted-string#title:has-text("Sports")
 ${PODCASTS_TITILE}           css=h1 span:has-text("Podcasts")
 ${YOUTUBE_PREMIUM_TEXT}      text=YouTube and YouTube Music ad-free, offline, and in the background
+${QUICK_PICKS}               css=ytmusic-responsive-list-item-renderer
 
 *** Keywords ***
 Check Music Page
@@ -91,3 +92,10 @@ Check Youtube Premium Page
     [Documentation]    Checks that Youtube Premium page on youtube is displayed correctly for a non-logged-in
     ...                user.
     Wait For Elements State    ${YOUTUBE_PREMIUM_TEXT}    visible
+
+Check Youtube Music Page
+    [Documentation]    Checks that Youtube Music page on youtube is displayed correctly for a non-logged-in
+    ...                user.
+    Wait For Elements State    ${QUICK_PICKS}    visible
+    ${items}=    Get Elements    ${QUICK_PICKS}
+    Should be True    ${items} > 5
