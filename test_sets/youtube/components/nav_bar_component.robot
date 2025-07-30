@@ -14,6 +14,7 @@ ${NEWS_TAB}                  css=tp-yt-paper-item:has-text("News")
 ${SPORTS_TAB}                css=tp-yt-paper-item:has-text("Sports")
 ${PODCASTS_TAB}              css=tp-yt-paper-item:has-text("Podcasts")
 ${YOUTUBE_PREMIUM_TAB}       css=tp-yt-paper-item:has-text("Youtube Premium")
+${YOUTUBE_MUSIC_TAB}         css=tp-yt-paper-item:has-text("Youtube Music")
 
 *** Keywords ***
 Select Music From Nav Bar
@@ -63,3 +64,7 @@ Select Podcasts From Nav Bar
 Select Youtube Premium From Nav Bar
     [Documentation]    Selects "Youtube Premium" from navigation bar.
     Click    ${YOUTUBE_PREMIUM_TAB}
+
+Select Youtube Music From Nav Bar
+    [Documentation]    Selects "Youtube Music" from navigation bar.
+    Click    ${YOUTUBE_MUSIC_TAB} 
