@@ -67,4 +67,5 @@ Select Youtube Premium From Nav Bar
 
 Select Youtube Music From Nav Bar
     [Documentation]    Selects "Youtube Music" from navigation bar.
-    Click    ${YOUTUBE_MUSIC_TAB} 
+    Click    ${YOUTUBE_MUSIC_TAB}
+    Switch Page    NEW
