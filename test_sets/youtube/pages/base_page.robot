@@ -25,6 +25,7 @@ ${YOUTUBE_PREMIUM_TEXT}      text=YouTube and YouTube Music ad-free, offline, an
 ${FIRST_CAROUSEL}            css=ytmusic-carousel >> nth=0
 ${FIRST_CAROUSEL_LIST}       css=ytmusic-carousel >> nth=0 >> ul#items
 ${FIRST_CAROUSEL_ITEMS}      css=ytmusic-carousel >> nth=0 >> ul#items > *
+${YOUTUBE_KIDS_TEXT}         text=YouTube Kids
 
 *** Keywords ***
 Check Music Page
@@ -102,3 +103,8 @@ Check Youtube Music Page
     Wait For Elements State    ${FIRST_CAROUSEL_LIST}  attached
     ${items}=    Get Element Count    ${FIRST_CAROUSEL_ITEMS} >> visible=true
     Should be True    ${items} > 5
+
+Check Youtube Kids Page
+    [Documentation]    Checks that Youtube Kids page on youtube is displayed correctly for a non-logged-in
+    ...                user.
+    Wait For Elements State    ${YOUTUBE_KIDS_TEXT}    visible
