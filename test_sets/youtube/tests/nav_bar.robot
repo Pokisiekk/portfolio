@@ -81,3 +81,9 @@ YTN-13 Youtube Music Page
     ...                non-logged-in user.
     Select Youtube Music From Nav Bar
     Check Youtube Music Page
+
+YTN-14 Youtube Kids Page
+    [Documentation]    Checks that Youtube Kids page on youtube is displayed correctly for a
+    ...                non-logged-in user.
+    Select Youtube Kids From Nav Bar
+    Check Youtube Kids Page
