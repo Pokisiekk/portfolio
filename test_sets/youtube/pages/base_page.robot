@@ -22,7 +22,9 @@ ${NEWS_TITILE}               css=h1 span:has-text("News")
 ${SPORTS_TITILE}             css=yt-formatted-string#title:has-text("Sports")
 ${PODCASTS_TITILE}           css=h1 span:has-text("Podcasts")
 ${YOUTUBE_PREMIUM_TEXT}      text=YouTube and YouTube Music ad-free, offline, and in the background
-${QUICK_PICKS}               css=ytmusic-responsive-list-item-renderer
+${FIRST_CAROUSEL}            css=ytmusic-carousel >> nth=0
+${FIRST_CAROUSEL_LIST}       css=ytmusic-carousel >> nth=0 >> ul#items
+${FIRST_CAROUSEL_ITEMS}      css=ytmusic-carousel >> nth=0 >> ul#items > *
 
 *** Keywords ***
 Check Music Page
@@ -96,6 +98,7 @@ Check Youtube Premium Page
 Check Youtube Music Page
     [Documentation]    Checks that Youtube Music page on youtube is displayed correctly for a non-logged-in
     ...                user.
-    Wait For Elements State    ${QUICK_PICKS}    visible
-    ${items}=    Get Elements    ${QUICK_PICKS}
+    Wait For Elements State    ${FIRST_CAROUSEL}       visible
+    Wait For Elements State    ${FIRST_CAROUSEL_LIST}  attached
+    ${items}=    Get Element Count    ${FIRST_CAROUSEL_ITEMS} >> visible=true
     Should be True    ${items} > 5
