@@ -26,7 +26,7 @@ YTN-03 Live Page
 YTN-04 Shorts Page
     [Documentation]    Checks that shors page on youtube is displayed correctly.
     Select Shorts From Nav Bar
-    Wait For Function    ${SHORT_ON}
+    Check Shorts Page
 
 YTN-05 Subscriptions Page
     [Documentation]    Checks that Subscriptions page on youtube is displayed correctly for a
@@ -87,3 +87,28 @@ YTN-14 Youtube Kids Page
     ...                non-logged-in user.
     Select Youtube Kids From Nav Bar
     Check Youtube Kids Page
+
+YTN-15 Nav Bar On Different Pages
+    [Documentation]    Checks that Nav bar is available and usable on different pages.
+    Select You From Nav Bar
+    Check You Page
+    Select Music From Nav Bar
+    Check Music Page
+    Select Movies From Nav Bar
+    Check Movies Page
+    Select Live From Nav Bar
+    Check Live Page
+    Select Shorts From Nav Bar
+    Check Shorts Page
+    Select Subscriptions From Nav Bar
+    Check Subscriptions Page
+    Select History From Nav Bar
+    Check History Page
+    Select Gaming From Nav Bar
+    Check Gaming Page
+    Select News From Nav Bar
+    Check News Page
+    Select Sports From Nav Bar
+    Check Sports Page
+    Select Podcasts From Nav Bar
+    Check Podcasts Page
