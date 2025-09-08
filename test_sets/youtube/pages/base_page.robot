@@ -9,6 +9,7 @@ ${INPUT_SEARCH}              css=input[name="search_query"]
 ${SEARCH_BUTTON}             css=button.ytSearchboxComponentSearchButton
 ${MOVIES_TITILE}             css=h1 span:has-text("Movies")
 ${LIVE_TITILE}               css=h1 span:has-text("Live")
+${SHORT_ON}                  () => document.querySelector('#shorts-player video')?.paused === false
 ${MUSIC_TITILE}              css=yt-formatted-string#title:has-text("Music")
 ${VIDEO_ID}                  id=thumbnail
 ${MUSIC_ID}                  id=content
@@ -45,6 +46,10 @@ Check Live Page
     Wait For Elements State    ${LIVE_TITILE}    visible
     ${video_count}    Get Element Count    ${VIDEO_ID}
     Should Be True    ${video_count} > 5
+
+Check Shorts Page
+    [Documentation]    Checks that Shorts page on youtube is displayed correctly.
+    Wait For Function    ${SHORT_ON}
 
 Check Subscriptions Page
     [Documentation]    Checks that Subscriptions page on youtube is displayed correctly for a
