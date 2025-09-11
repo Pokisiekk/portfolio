@@ -11,7 +11,8 @@ Test Teardown       Close Browser
 YTV-01 Subscription Without Logging
     [Documentation]    Checks that subscription functionality on youtube is possible without a
     ...                logged in account.
-    Select Trending From Nav Bar
+    ${word}    Get Random Word
+    Search    ${word}
     Select First Video
     Click Subscribe Button
     ${text}    Get Content from Alert Popup
