@@ -31,3 +31,10 @@ YTV-03 Start And Stop Video
     Launch Video
     Stop Video
     Start Video
+
+YTV-04 Like Without Logging
+    [Documentation]    Checks that like videos on youtube is possible without a logged in account.
+    Launch Video
+    Click Like Button
+    ${text}    Get Content from Alert Popup
+    Should Be Equal As Strings    ${text}    ${LIKE_ALERT}
