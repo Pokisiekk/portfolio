@@ -21,8 +21,9 @@ YTV-01 Subscription Without Logging
 YTV-02 Comment Without Logging
     [Documentation]    Checks that commenting videos on youtube is possible without a logged in
     ...                account.
-    Select Music From Nav Bar
-    Select First Music
+    ${word}    Get Random Word
+    Search    ${word}
+    Select First Video
     Click On Comment Section
     ${text}    Get Content from Alert Popup
     Should Be Equal As Strings    ${text}    ${COMMENT_ALERT}
