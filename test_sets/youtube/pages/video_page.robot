@@ -7,6 +7,7 @@ ${VIDEO_STOPPED}             () => document.querySelectorAll('video.html5-main-v
 ${VIDEO_MAIN}                css=#movie_player video.html5-main-video
 ${SUBSCRIBE_BUTTON}          css=button[aria-label^="Subscribe to "]
 ${LIKE_BUTTON}               css=button[aria-label^="like this video"] >> nth=0
+${DISLIKE_BUTTON}            css=button[aria-label^="dislike this video" i] >> nth=0
 ${ALERT_POPUP}               css=ytd-modal-with-title-and-button-renderer
 ${COMMENT_PLACEHOLDER}       id=placeholder-area
 ${COMMENT_ALERT}             Sign in to continue
@@ -20,9 +21,14 @@ Click Subscribe Button
     Click    ${SUBSCRIBE_BUTTON}
 
 Click Like Button
-    [Documentation]    Clicks on the subscribe button.
+    [Documentation]    Clicks on the like button.
     Wait For Elements State    ${LIKE_BUTTON}    visible
     Click    ${LIKE_BUTTON}
+
+Click Dislike Button
+    [Documentation]    Clicks on the dislike button.
+    Wait For Elements State    ${DISLIKE_BUTTON}    visible
+    Click    ${DISLIKE_BUTTON}
 
 Get Content from Alert Popup
     [Documentation]    Gets and returns text from the content section for an alert popup.
