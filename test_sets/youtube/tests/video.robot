@@ -31,7 +31,8 @@ YTV-02 Comment Without Logging
 YTV-03 Start And Stop Video
     [Documentation]    Checks that stopping and starting a video on youtube video works by clicking
     ...                on the video.
-    Select Music From Nav Bar
-    Select First Music
+    ${word}    Get Random Word
+    Search    ${word}
+    Select First Video
     Stop Video
     Start Video
