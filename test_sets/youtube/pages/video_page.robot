@@ -7,7 +7,7 @@ ${VIDEO_ON}                  () => document.querySelectorAll('video.html5-main-v
 ${VIDEO_STOPPED}             () => document.querySelectorAll('video.html5-main-video')[0]?.paused === true
 ${VIDEO_MAIN}                css=#movie_player video.html5-main-video
 
-${SUBSCRIBE_BUTTON}          role=button[name="Subscribe"]
+${SUBSCRIBE_BUTTON}          css=button[aria-label^="Subscribe to "]
 ${ALERT_POPUP}               css=ytd-modal-with-title-and-button-renderer
 ${COMMENT_PLACEHOLDER}       id=placeholder-area
 
