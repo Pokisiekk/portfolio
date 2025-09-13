@@ -5,19 +5,24 @@ Library         Browser
 ${VIDEO_ON}                  () => document.querySelectorAll('video.html5-main-video')[0]?.paused === false
 ${VIDEO_STOPPED}             () => document.querySelectorAll('video.html5-main-video')[0]?.paused === true
 ${VIDEO_MAIN}                css=#movie_player video.html5-main-video
-
 ${SUBSCRIBE_BUTTON}          css=button[aria-label^="Subscribe to "]
+${LIKE_BUTTON}               css=button[aria-label^="like this video"] >> nth=0
 ${ALERT_POPUP}               css=ytd-modal-with-title-and-button-renderer
 ${COMMENT_PLACEHOLDER}       id=placeholder-area
-
 ${COMMENT_ALERT}             Sign in to continue
 ${SUBSCRIBE_ALERT}           Sign in to subscribe to this channel.
+${LIKE_ALERT}                Sign in to make your opinion count.
 
 *** Keywords ***
 Click Subscribe Button
     [Documentation]    Clicks on the subscribe button.
     Wait For Elements State    ${SUBSCRIBE_BUTTON}    visible
     Click    ${SUBSCRIBE_BUTTON}
+
+Click Like Button
+    [Documentation]    Clicks on the subscribe button.
+    Wait For Elements State    ${LIKE_BUTTON}    visible
+    Click    ${LIKE_BUTTON}
 
 Get Content from Alert Popup
     [Documentation]    Gets and returns text from the content section for an alert popup.
