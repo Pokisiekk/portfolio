@@ -8,11 +8,13 @@ ${VIDEO_MAIN}                css=#movie_player video.html5-main-video
 ${SUBSCRIBE_BUTTON}          css=button[aria-label^="Subscribe to "]
 ${LIKE_BUTTON}               css=button[aria-label^="like this video"] >> nth=0
 ${DISLIKE_BUTTON}            css=button[aria-label^="dislike this video" i] >> nth=0
+${DISLIKE_BUTTON}            css=button[aria-label^="share" i]
 ${ALERT_POPUP}               css=ytd-modal-with-title-and-button-renderer
 ${COMMENT_PLACEHOLDER}       id=placeholder-area
 ${COMMENT_ALERT}             Sign in to continue
 ${SUBSCRIBE_ALERT}           Sign in to subscribe to this channel.
 ${LIKE_ALERT}                Sign in to make your opinion count.
+${SHARE_ALERT}               Share
 
 *** Keywords ***
 Click Subscribe Button
@@ -29,6 +31,11 @@ Click Dislike Button
     [Documentation]    Clicks on the dislike button.
     Wait For Elements State    ${DISLIKE_BUTTON}    visible
     Click    ${DISLIKE_BUTTON}
+
+Click Share Button
+    [Documentation]    Clicks on the share button.
+    Wait For Elements State    ${SHARE_BUTTON}    visible
+    Click    ${SHARE_BUTTON}
 
 Get Content from Alert Popup
     [Documentation]    Gets and returns text from the content section for an alert popup.
