@@ -8,7 +8,7 @@ ${VIDEO_MAIN}                css=#movie_player video.html5-main-video
 ${SUBSCRIBE_BUTTON}          css=button[aria-label^="Subscribe to "]
 ${LIKE_BUTTON}               css=button[aria-label^="like this video"] >> nth=0
 ${DISLIKE_BUTTON}            css=button[aria-label^="dislike this video" i] >> nth=0
-${DISLIKE_BUTTON}            css=button[aria-label^="share" i]
+${SHARE_BUTTON}              css=button[aria-label^="share" i]
 ${ALERT_POPUP}               css=ytd-modal-with-title-and-button-renderer
 ${COMMENT_PLACEHOLDER}       id=placeholder-area
 ${COMMENT_ALERT}             Sign in to continue
