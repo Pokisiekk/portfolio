@@ -45,7 +45,7 @@ Get Content from Alert Popup
 
 Click On Comment Section
     [Documentation]    Scrolls the screen and clicks on the comment field under the video.
-    Wait For Function    ${VIDEO_ON}
+    Wait For Load State    networkidle
     Scroll By    ${None}    600    0    smooth
     Wait For Elements State    ${COMMENT_PLACEHOLDER}    visible
     Click    ${COMMENT_PLACEHOLDER}
