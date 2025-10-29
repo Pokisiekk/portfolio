@@ -51,5 +51,4 @@ YTV-06 Share Without Logging
     [Documentation]    Checks that share videos on youtube is possible without a logged in account.
     Launch Video
     Click Share Button
-    ${text}    Get Content from Alert Popup
-    Should Be Equal As Strings    ${text}    ${SHARE_ALERT}
+    Wait For Elements State    ${SHARE_ALERT}    visible

@@ -8,13 +8,13 @@ ${VIDEO_MAIN}                css=#movie_player video.html5-main-video
 ${SUBSCRIBE_BUTTON}          css=button[aria-label^="Subscribe to "]
 ${LIKE_BUTTON}               css=button[aria-label^="like this video"] >> nth=0
 ${DISLIKE_BUTTON}            css=button[aria-label^="dislike this video" i] >> nth=0
-${SHARE_BUTTON}              css=button[aria-label^="share" i]
+${SHARE_BUTTON}              css=ytd-menu-renderer button:has-text("Share") >> nth=0
 ${ALERT_POPUP}               css=ytd-modal-with-title-and-button-renderer
 ${COMMENT_PLACEHOLDER}       id=placeholder-area
 ${COMMENT_ALERT}             Sign in to continue
 ${SUBSCRIBE_ALERT}           Sign in to subscribe to this channel.
 ${LIKE_ALERT}                Sign in to make your opinion count.
-${SHARE_ALERT}               Share
+${SHARE_ALERT}               css=tp-yt-paper-dialog ytd-unified-share-panel-renderer h2#title:has-text("Share"):visible
 
 *** Keywords ***
 Click Subscribe Button
