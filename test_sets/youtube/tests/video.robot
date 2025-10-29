@@ -52,3 +52,10 @@ YTV-06 Share Without Logging
     Launch Video
     Click Share Button
     Wait For Elements State    ${SHARE_ALERT}    visible
+
+YTV-07 Save Without Logging
+    [Documentation]    Checks that save videos on youtube is possible without a logged in account.
+    Launch Video
+    Click Save Button
+    ${text}    Get Content from Alert Popup
+    Should Be Equal As Strings    ${text}    ${SAVE_ALERT}
