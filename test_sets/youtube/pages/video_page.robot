@@ -17,6 +17,9 @@ ${SUBSCRIBE_ALERT}           Sign in to subscribe to this channel.
 ${LIKE_ALERT}                Sign in to make your opinion count.
 ${SHARE_ALERT}               css=tp-yt-paper-dialog ytd-unified-share-panel-renderer h2#title:has-text("Share"):visible
 ${SAVE_ALERT}                Sign in to add this video to a playlist.
+${PLAYER}                    css=.html5-video-player >> nth=0
+${FULL_SCREEN_BUTTON}        css=button.ytp-fullscreen-button
+${FULL_SCREEN_CLASS}         ytp-fullscreen
 
 *** Keywords ***
 Click Subscribe Button
@@ -44,6 +47,12 @@ Click Save Button
     Wait For Elements State    ${SAVE_BUTTON}    visible
     Click    ${SAVE_BUTTON}
 
+Click Full Screen Button
+    [Documentation]    Clicks on the full screen button.
+    Hover    ${VIDEO_MAIN}
+    Wait For Elements State    ${FULL_SCREEN_BUTTON}    visible
+    Click    ${FULL_SCREEN_BUTTON}
+
 Get Content from Alert Popup
     [Documentation]    Gets and returns text from the content section for an alert popup.
     Wait For Elements State    ${ALERT_POPUP}    visible
@@ -67,3 +76,8 @@ Start Video
     [Documentation]    Starts the video by clicking on it.
     Click    ${VIDEO_MAIN}
     Wait For Function    ${VIDEO_ON}
+
+Check Fullscreen On
+    [Documentation]    Checks that the video is displayed in full screen.
+    ${classes}=    Get Attribute    ${PLAYER}     class
+    Should Contain    ${classes}    ${FULL_SCREEN_CLASS}
