@@ -5,8 +5,6 @@ Resource        ../components/search_component.robot
 
 *** Variables ***
 ${ACCEPT_ALL_BTN}            css=button:has-text("Accept all")
-${INPUT_SEARCH}              css=input[name="search_query"]
-${SEARCH_BUTTON}             css=button.ytSearchboxComponentSearchButton
 ${MOVIES_TITILE}             css=h1 span:has-text("Movies")
 ${LIVE_TITILE}               css=h1 span:has-text("Live")
 ${SHORT_ON}                  () => document.querySelector('#shorts-player video')?.paused === false
