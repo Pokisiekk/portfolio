@@ -64,8 +64,8 @@ Check You Page
     Should Be Equal As Strings    ${text}    ${YOU_UNLOGGED_TEXT}
 
 Check History Page
-    [Documentation]    Checks that History page on youtube is displayed correctly for a non-logged-in
-    ...                user.
+    [Documentation]    Checks that History page on youtube is displayed correctly for a
+    ...                non-logged-in wuser.
     Wait For Elements State    ${HISTORY_UNLOGGED}    visible
     ${text}    Get Text    ${HISTORY_UNLOGGED}
     Should Be Equal As Strings    ${text}    ${HISTORY_UNLOGGED_TEXT}
@@ -95,19 +95,19 @@ Check Podcasts Page
     Should Be True    ${video_count} > 5
 
 Check Youtube Premium Page
-    [Documentation]    Checks that Youtube Premium page on youtube is displayed correctly for a non-logged-in
-    ...                user.
+    [Documentation]    Checks that Youtube Premium page on youtube is displayed correctly for a
+    ...                non-logged-in user.
     Wait For Elements State    ${YOUTUBE_PREMIUM_TEXT}    visible
 
 Check Youtube Music Page
-    [Documentation]    Checks that Youtube Music page on youtube is displayed correctly for a non-logged-in
-    ...                user.
+    [Documentation]    Checks that Youtube Music page on youtube is displayed correctly for a
+    ...                non-logged-in user.
     Wait For Elements State    ${FIRST_CAROUSEL}       visible
     Wait For Elements State    ${FIRST_CAROUSEL_LIST}  attached
     ${items}=    Get Element Count    ${FIRST_CAROUSEL_ITEMS} >> visible=true
     Should be True    ${items} > 5
 
 Check Youtube Kids Page
-    [Documentation]    Checks that Youtube Kids page on youtube is displayed correctly for a non-logged-in
-    ...                user.
+    [Documentation]    Checks that Youtube Kids page on youtube is displayed correctly for a
+    ...                non-logged-in user.
     Wait For Elements State    ${YOUTUBE_KIDS_TEXT}    visible
