@@ -59,3 +59,9 @@ YTV-07 Save Without Logging
     Click Save Button
     ${text}    Get Content from Alert Popup
     Should Be Equal As Strings    ${text}    ${SAVE_ALERT}
+
+YTV-08 Full Screen
+    [Documentation]    Checks that full screen option on youtube works correctly.
+    Launch Video
+    Click Full Screen Button
+    Wait Until Keyword Succeeds    5 s    1 s    Check Fullscreen On
