@@ -1,6 +1,5 @@
 *** Settings ***
 Resource            ../resources/keywords.robot
-Resource            ../pages/base_page.robot
 Resource            ../pages/video_page.robot
 
 Test Setup          Open youtube
