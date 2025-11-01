@@ -6,7 +6,7 @@ ${VIDEO_ON}                  () => document.querySelectorAll('video.html5-main-v
 ${VIDEO_STOPPED}             () => document.querySelectorAll('video.html5-main-video')[0]?.paused === true
 ${VIDEO_MAIN}                css=#movie_player video.html5-main-video
 ${SUBSCRIBE_BUTTON}          css=button[aria-label^="Subscribe to "]
-${LIKE_BUTTON}               css=button[aria-label^="like this video"] >> nth=0
+${LIKE_BUTTON}               css=#below >> role=button[name^="like this video" i] >> nth=0
 ${DISLIKE_BUTTON}            css=button[aria-label^="dislike this video" i] >> nth=0
 ${SHARE_BUTTON}              css=ytd-menu-renderer button:has-text("Share") >> nth=0
 ${SAVE_BUTTON}               css=button[aria-label^="Save"] >> nth=0
