@@ -15,7 +15,7 @@ ${COMMENT_PLACEHOLDER}       id=placeholder-area
 ${COMMENT_ALERT}             Sign in to continue
 ${SUBSCRIBE_ALERT}           Sign in to subscribe to this channel.
 ${LIKE_ALERT}                Sign in to make your opinion count.
-${SHARE_ALERT}               css=tp-yt-paper-dialog ytd-unified-share-panel-renderer h2#title:has-text("Share"):visible
+${SHARE_ALERT}               css=ytd-popup-container tp-yt-paper-dialog:has(> yt-unified-share-panel-renderer)
 ${SAVE_ALERT}                Sign in to add this video to a playlist.
 ${PLAYER}                    css=.html5-video-player >> nth=0
 ${FULL_SCREEN_BUTTON}        css=button.ytp-fullscreen-button
