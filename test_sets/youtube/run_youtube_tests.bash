@@ -1,22 +1,37 @@
 #!/usr/bin/env bash
-set -e
+VENV="$(mktemp -d)"
+python -m venv "$VENV"
 
-SUITE="test_sets/youtube/tests.robot"
-L="logs/youtube"; mkdir -p "$L"
+if [[ "$OSTYPE" == msys* || "$OSTYPE" == win32* ]]; then
+  source "$VENV/Scripts/activate"
+else
+  source "$VENV/bin/activate"
+fi
 
-if robot -d "$L/try1" -o "$L/output1.xml" "$SUITE"; then
-  rebot --merge -d "$L" -o "$L/output.xml" -l "$L/log.html" -r "$L/report.html" \
-        "$L/output1.xml"
+pip install -r requirements.txt
+rfbrowser init
+
+S="test_sets/youtube/tests.robot"
+L="logs/youtube"
+mkdir -p "$L"
+
+if robot -d "$L/try1" -o "$L/output1.xml" "$S"; then
+  rebot --merge -d "$L" -o "$L/output.xml" -l "$L/log.html" -r "$L/report.html" "$L/output1.xml"
   exit 0
 fi
 
-if robot --rerunfailed "$L/output1.xml" -d "$L/try2" -o "$L/output2.xml" "$SUITE"; then
-  rebot --merge -d "$L" -o "$L/output.xml" -l "$L/log.html" -r "$L/report.html" \
-        "$L/output1.xml" "$L/output2.xml"
+if robot --rerunfailed "$L/output1.xml" -d "$L/try2" -o "$L/output2.xml" "$S"; then
+  rebot --merge -d "$L" -o "$L/output.xml" -l "$L/log.html" -r "$L/report.html" "$L/output1.xml" "$L/output2.xml"
   exit 0
 fi
 
-robot --rerunfailed "$L/output2.xml" -d "$L/try3" -o "$L/output3.xml" "$SUITE" || true
+STATUS=0
+robot --rerunfailed "$L/output2.xml" -d "$L/try3" -o "$L/output3.xml" "$S" || STATUS=$?
 
 rebot --merge -d "$L" -o "$L/output.xml" -l "$L/log.html" -r "$L/report.html" \
-      "$L/output1.xml" "$L/output2.xml" "$L/output3.xml"
+  "$L/output1.xml" "$L/output2.xml" "$L/output3.xml"
+
+echo "Youtube tests completed."
+
+deactivate
+rm -rf "$TEMP_VENV"
