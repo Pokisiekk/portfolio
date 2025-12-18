@@ -15,3 +15,8 @@ if robot --rerunfailed "$L/output1.xml" -d "$L/try2" -o "$L/output2.xml" "$SUITE
         "$L/output1.xml" "$L/output2.xml"
   exit 0
 fi
+
+robot --rerunfailed "$L/output2.xml" -d "$L/try3" -o "$L/output3.xml" "$SUITE" || true
+
+rebot --merge -d "$L" -o "$L/output.xml" -l "$L/log.html" -r "$L/report.html" \
+      "$L/output1.xml" "$L/output2.xml" "$L/output3.xml"
