@@ -25,8 +25,13 @@ rfbrowser init
 
 robot --outputdir "${LOGS_DIR}" --output original.xml "${TEST_PATH}"
 if [ $? -ne 0 ]; then
-    robot --outputdir "${LOGS_DIR}" --rerunfailed "${LOGS_DIR}/original.xml" --output rerun.xml "${TEST_PATH}"
-    rebot --outputdir "${LOGS_DIR}" --merge "${LOGS_DIR}/original.xml" "${LOGS_DIR}/rerun.xml"
+    robot --outputdir "${LOGS_DIR}" --rerunfailed "${LOGS_DIR}/original.xml" --output rerun1.xml "${TEST_PATH}"
+    if [ $? -ne 0 ]; then
+        robot --outputdir "${LOGS_DIR}" --rerunfailed "${LOGS_DIR}/rerun1.xml" --output rerun2.xml "${TEST_PATH}"
+        rebot --outputdir "${LOGS_DIR}" --merge "${LOGS_DIR}/original.xml" "${LOGS_DIR}/rerun1.xml" "${LOGS_DIR}/rerun2.xml"
+    else
+        rebot --outputdir "${LOGS_DIR}" --merge "${LOGS_DIR}/original.xml" "${LOGS_DIR}/rerun1.xml"
+    fi
 fi
 
 echo "Youtube tests completed."
