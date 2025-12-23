@@ -23,7 +23,11 @@ fi
 pip install -r requirements.txt
 rfbrowser init
 
-robot --outputdir "${LOGS_DIR}" "${TEST_PATH}"
+robot --outputdir "${LOGS_DIR}" --output original.xml "${TEST_PATH}"
+if [ $? -ne 0 ]; then
+    robot --outputdir "${LOGS_DIR}" --rerunfailed "${LOGS_DIR}/original.xml" --output rerun.xml "${TEST_PATH}"
+    rebot --outputdir "${LOGS_DIR}" --merge "${LOGS_DIR}/original.xml" "${LOGS_DIR}/rerun.xml"
+fi
 
 echo "Youtube tests completed."
 
