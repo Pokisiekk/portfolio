@@ -16,6 +16,7 @@ ${PODCASTS_TAB}              css=tp-yt-paper-item:has-text("Podcasts")
 ${YOUTUBE_PREMIUM_TAB}       css=tp-yt-paper-item:has-text("Youtube Premium")
 ${YOUTUBE_MUSIC_TAB}         css=tp-yt-paper-item:has-text("Youtube Music")
 ${YOUTUBE_KIDS_TAB}          css=tp-yt-paper-item:has-text("Youtube Kids")
+${SHOW_MORE_TAB}             css=tp-yt-paper-item:has-text("Show more")
 
 *** Keywords ***
 Select Music From Nav Bar
@@ -48,10 +49,12 @@ Select History From Nav Bar
 
 Select Gaming From Nav Bar
     [Documentation]    Selects "Gaming" from navigation bar.
+    Click    ${SHOW_MORE_TAB}
     Click    ${GAMING_TAB}
 
 Select News From Nav Bar
     [Documentation]    Selects "News" from navigation bar.
+    Click    ${SHOW_MORE_TAB}
     Click    ${NEWS_TAB}
 
 Select Sports From Nav Bar
@@ -60,6 +63,7 @@ Select Sports From Nav Bar
 
 Select Podcasts From Nav Bar
     [Documentation]    Selects "Podcasts" from navigation bar.
+    Click    ${SHOW_MORE_TAB}
     Click    ${PODCASTS_TAB}
 
 Select Youtube Premium From Nav Bar
