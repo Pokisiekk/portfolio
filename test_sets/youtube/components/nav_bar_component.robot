@@ -83,7 +83,11 @@ Select Youtube Kids From Nav Bar
 
 Select Show More From Nav Bar
     [Documentation]    Selects "Show more" from navigation bar if visible.
-    ${rc}    ${msg}=    Run Keyword And Ignore Error    Wait For Elements State    ${SHOW_MORE_TAB}    visible    timeout=1s
+    ${rc}    ${msg}=    Run Keyword And Ignore Error    Check Show More Option
     IF    '${rc}' == 'PASS'
         Click    ${SHOW_MORE_TAB}
     END
+
+Check Show More Option
+    [Documentation]    Checks if "Show more" is visible.
+    Wait For Elements State    ${SHOW_MORE_TAB}    visible    timeout=1s
