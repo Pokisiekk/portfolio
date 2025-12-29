@@ -59,6 +59,7 @@ Select News From Nav Bar
 
 Select Sports From Nav Bar
     [Documentation]    Selects "Sports" from navigation bar.
+    Click    ${SHOW_MORE_TAB}
     Click    ${SPORTS_TAB}
 
 Select Podcasts From Nav Bar
