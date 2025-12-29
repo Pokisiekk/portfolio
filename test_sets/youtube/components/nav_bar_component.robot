@@ -49,22 +49,22 @@ Select History From Nav Bar
 
 Select Gaming From Nav Bar
     [Documentation]    Selects "Gaming" from navigation bar.
-    Click    ${SHOW_MORE_TAB}
+    Select Show More From Nav Bar
     Click    ${GAMING_TAB}
 
 Select News From Nav Bar
     [Documentation]    Selects "News" from navigation bar.
-    Click    ${SHOW_MORE_TAB}
+    Select Show More From Nav Bar
     Click    ${NEWS_TAB}
 
 Select Sports From Nav Bar
     [Documentation]    Selects "Sports" from navigation bar.
-    Click    ${SHOW_MORE_TAB}
+    Select Show More From Nav Bar
     Click    ${SPORTS_TAB}
 
 Select Podcasts From Nav Bar
     [Documentation]    Selects "Podcasts" from navigation bar.
-    Click    ${SHOW_MORE_TAB}
+    Select Show More From Nav Bar
     Click    ${PODCASTS_TAB}
 
 Select Youtube Premium From Nav Bar
@@ -80,3 +80,10 @@ Select Youtube Kids From Nav Bar
     [Documentation]    Selects "Youtube Kids" from navigation bar.
     Click    ${YOUTUBE_KIDS_TAB}
     Switch Page    NEW
+
+Select Show More From Nav Bar
+    [Documentation]    Selects "Show more" from navigation bar if visible.
+    ${rc}    ${msg}=    Run Keyword And Ignore Error    Wait For Elements State    ${SHOW_MORE_TAB}    visible    timeout=1s
+    IF    '${rc}' == 'PASS'
+        Click    ${SHOW_MORE_TAB}
+    END
