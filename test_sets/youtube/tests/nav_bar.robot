@@ -78,6 +78,9 @@ YTN-12 Youtube Premium Page
 YTN-13 Youtube Music Page
     [Documentation]    Checks that Youtube Music page on youtube is displayed correctly for a
     ...                non-logged-in user.
+    IF    ${HEADLESS}
+        Skip    Not supported in headless mode
+    END
     Select Youtube Music From Nav Bar
     Check Youtube Music Page
 
