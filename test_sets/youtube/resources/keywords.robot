@@ -8,8 +8,8 @@ Resource        ../pages/results_page.robot
 *** Keywords ***
 Open youtube
     [Documentation]    Opens youtube website.
-    New Browser    headless=False    args=["--start-maximized"]
-    New Context    viewport=None    locale=en-US
+    New Browser    headless=${HEADLESS}   args=["--start-maximized"]
+    New Context    viewport={'width': 1920, 'height': 1280}    locale=en-US
     New Page    ${URL}
     Click    ${ACCEPT_ALL_BTN}
 
