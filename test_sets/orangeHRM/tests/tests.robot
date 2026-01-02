@@ -1,5 +1,5 @@
 *** Settings ***
-Resource            keywords.robot
+Resource            ../resources/keywords.robot
 
 Test Setup          Login To OrangeHRM Website
 Test Teardown       Close Browser
