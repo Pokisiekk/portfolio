@@ -1,5 +1,8 @@
 *** Settings ***
 Resource            ../resources/keywords.robot
+Resource            ../pages/directory_page.robot
+Resource            ../pages/admin_page.robot
+Resource            ../pages/time_page.robot
 
 Test Setup          Login To OrangeHRM Website
 Test Teardown       Close Browser
