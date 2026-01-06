@@ -1,5 +1,4 @@
 *** Variables ***
-${ADMIN_TAB}             xpath=//a[@href='/web/index.php/admin/viewAdminModule']
 ${ADMIN_TITLE}           xpath=//h6[text()="Admin"]
 ${LISTBOX_ADMIN}         xpath=//div[@role='listbox']//*[normalize-space(text())="Admin"]
 ${LISTBOX_ESS}           xpath=//div[@role='listbox']//*[normalize-space(text())="ESS"]

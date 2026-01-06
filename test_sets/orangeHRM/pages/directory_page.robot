@@ -4,7 +4,6 @@ Library         SeleniumLibrary
 Resource        ../resources/variables.robot
 
 *** Variables ***
-${DIRECTORY_TAB}         xpath=//a[@href='/web/index.php/directory/viewDirectory']
 ${DIRECTORY_TITLE}       xpath=//h6[text()="Directory"]
 ${DIRECTORY_INPUT}       xpath=//input[@placeholder='Type for hints...']
 ${LISTBOX}               xpath=//div[@role='listbox']
