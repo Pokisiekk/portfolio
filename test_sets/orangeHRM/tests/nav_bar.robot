@@ -3,6 +3,7 @@ Resource            ../resources/keywords.robot
 Resource            ../pages/directory_page.robot
 Resource            ../pages/admin_page.robot
 Resource            ../pages/time_page.robot
+Resource            ../components/nav_bar_component.robot
 
 Test Setup          Login To OrangeHRM Website
 Test Teardown       Close Browser
@@ -11,7 +12,7 @@ Test Teardown       Close Browser
 OH-01 Employee Search
     [Documentation]    Checks that employee seach in Directory tab on oragneHRM website works
     ...                correctly.
-    Click Element    ${DIRECTORY_TAB}
+    Select Directory From Nav Bar
     Wait Until Element Is Visible    ${DIRECTORY_TITLE}
     Input Text    ${DIRECTORY_INPUT}    ${NAME}
     Wait Until Element Contains    ${LISTBOX}    ${TEST_FULL_NAME}
@@ -22,7 +23,7 @@ OH-01 Employee Search
 OH-02 Admin Tab
     [Documentation]    Checks that searching for people by user role in Admin tab on oragneHRM
     ...                website works correctly.
-    Click Element    ${ADMIN_TAB}
+    Select Admin From Nav Bar
     Wait Until Element Is Visible    ${ADMIN_TITLE}
     Find User By Role    ${ADMIN_USER_ROLE}    ${LISTBOX_ADMIN}
     Click Element    ${RESET_BUTTON}
@@ -31,7 +32,7 @@ OH-02 Admin Tab
 OH-03 Client Companies In Projects
     [Documentation]    Checks that client companies are added to the project information tab on
     ...                oragneHRM website.
-    Click Element    ${TIME_TAB}
+    Select Time From Nav Bar
     Wait Until Element Is Visible    ${TIME_TITLE}
     Click Element    ${PROJECT_INFO}
     Wait Until Element Is Visible    ${CUSTOMERS}
