@@ -5,8 +5,8 @@ Resource        ../resources/variables.robot
 
 *** Variables ***
 ${DIRECTORY_TITLE}       xpath=//h6[text()="Directory"]
-${DIRECTORY_INPUT}       xpath=//input[@placeholder='Type for hints...']
-${LISTBOX}               xpath=//div[@role='listbox']
+${DIRECTORY_INPUT}       css:input[placeholder="Type for hints..."]
+${LISTBOX}               css:div[role="listbox"]
 ${WANTED_USER}           xpath=//p[contains(normalize-space(.), "${TEST_FULL_NAME}")]
 ${USER_ROLE}             xpath=(//div[@class="oxd-select-text-input" and normalize-space(text())="-- Select --"])[1]
 ${RECORDS_FILED}         xpath=//div[@class="orangehrm-horizontal-padding orangehrm-vertical-padding"]//span[contains(normalize-space(.), 'Records Found')]
