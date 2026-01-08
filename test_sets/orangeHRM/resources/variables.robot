@@ -10,4 +10,4 @@ ${TEST_FULL_NAME}        ${NAME} ${TEST_SURNAME}
 ${ADMIN_USER_ROLE}       Admin
 ${ESS_USER_ROLE}         ESS
 
-${SUBMIT_BUTTON}         xpath=//button[@type="submit"]
+${SUBMIT_BUTTON}         css:button[type="submit"]
