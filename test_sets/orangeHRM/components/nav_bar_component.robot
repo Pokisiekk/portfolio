@@ -2,9 +2,9 @@
 Library             SeleniumLibrary
     
 *** Variables ***
-${DIRECTORY_TAB}         xpath=//a[@href='/web/index.php/directory/viewDirectory']
-${ADMIN_TAB}             xpath=//a[@href='/web/index.php/admin/viewAdminModule']
-${TIME_TAB}              xpath=//a[@href='/web/index.php/time/viewTimeModule']
+${DIRECTORY_TAB}         css:a[href$="/web/index.php/directory/viewDirectory"]
+${ADMIN_TAB}             css:a[href$="/web/index.php/admin/viewAdminModule"]
+${TIME_TAB}              css:a[href$="/web/index.php/time/viewTimeModule"]
 
 *** Keywords ***
 Select Directory From Nav Bar
