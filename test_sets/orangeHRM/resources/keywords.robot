@@ -15,4 +15,5 @@ Login To OrangeHRM Website
     Input Text    ${LOGIN_USERNAME}    ${USERNAME}
     Input Text    ${LOGIN_PASSWORD}    ${PASSWORD}
     Click Button    ${SUBMIT_BUTTON}
-    Wait Until Element Is Visible    ${DASHBOARD_TITLE}
+    Wait Until Element Is Visible    ${PAGE_TITLE}
+    Element Text Should Be    ${PAGE_TITLE}    ${DASHBOARD_TITLE}
