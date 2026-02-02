@@ -4,7 +4,7 @@ Library         SeleniumLibrary
 Resource        ../resources/variables.robot
 
 *** Variables ***
-${DIRECTORY_TITLE}       xpath=//h6[text()="Directory"]
+${DIRECTORY_TITLE}       Directory
 ${DIRECTORY_INPUT}       css:input[placeholder="Type for hints..."]
 ${LISTBOX}               css:div[role="listbox"]
 ${WANTED_USER}           xpath=//p[contains(normalize-space(.), "${TEST_FULL_NAME}")]
