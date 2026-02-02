@@ -11,3 +11,4 @@ ${ADMIN_USER_ROLE}       Admin
 ${ESS_USER_ROLE}         ESS
 
 ${SUBMIT_BUTTON}         css:button[type="submit"]
+${PAGE_TITLE}            css:h6.oxd-topbar-header-breadcrumb-module
