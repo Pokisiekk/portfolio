@@ -5,7 +5,8 @@ Resource            ../pages/admin_page.robot
 Resource            ../pages/time_page.robot
 Resource            ../components/nav_bar_component.robot
 
-Test Setup          Login To OrangeHRM Website
+Test Setup          Run Keywords    Open OrangeHRM Website
+...                 AND    Login To OrangeHRM Website
 Test Teardown       Close Browser
 
 *** Test Cases ***
