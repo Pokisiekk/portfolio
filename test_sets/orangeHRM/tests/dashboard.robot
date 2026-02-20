@@ -7,3 +7,6 @@ Test Setup          Run Keywords    Open OrangeHRM Website
 Test Teardown       Close Browser
 
 *** Test Cases ***
+DO-01 Dashboard Verification
+    [Documentation]    Checks that dashboard displays expected widgets.
+    Check Dashboard Widgets
