@@ -12,16 +12,12 @@ ${USER_ROLE}             xpath=(//div[@class="oxd-select-text-input" and normali
 ${RECORDS_FILED}         xpath=//div[@class="orangehrm-horizontal-padding orangehrm-vertical-padding"]//span[contains(normalize-space(.), 'Records Found')]
 
 *** Keywords ***
-Check Records
-    [Documentation]    Checks that at least one matching record is found.
-    Wait Until Element Is Visible    ${RECORDS_FILED} 
-    Element Should Not Contain    ${RECORDS_FILED}    No Records Found
-
-Find User By Role
-    [Documentation]    Searches for users by a given role.
-    [Arguments]    ${role}    ${element}
-    Click Element    ${USER_ROLE}
-    Wait Until Element Contains    ${LISTBOX}    ${role}
-    Click Element    ${element}
+Check Directory Page
+    [Documentation]    Checks basic operations on Directory page.
+    Wait Until Element Is Visible    ${PAGE_TITLE}
+    Element Text Should Be    ${PAGE_TITLE}    ${DIRECTORY_TITLE}
+    Input Text    ${DIRECTORY_INPUT}    ${NAME}
+    Wait Until Element Contains    ${LISTBOX}    ${TEST_FULL_NAME}
+    Click Element    ${LISTBOX}
     Click Button    ${SUBMIT_BUTTON}
-    Check Records
+    Wait Until Element Is Visible    ${WANTED_USER}
