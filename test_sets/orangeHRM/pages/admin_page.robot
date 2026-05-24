@@ -10,7 +10,7 @@ ${LISTBOX_ESS}           xpath=//div[@role='listbox']//*[normalize-space(text())
 ${RESET_BUTTON}          xpath=//button[@type="button" and normalize-space(.)="Reset"]
 ${LISTBOX}               css:div[role="listbox"]
 ${USER_ROLE}             xpath=(//div[@class="oxd-select-text-input" and normalize-space(text())="-- Select --"])[1]
-${RECORDS_FILED}         xpath=//div[@class="orangehrm-horizontal-padding orangehrm-vertical-padding"]//span[contains(normalize-space(.), 'Records Found')]
+${RECORDS_FIELD}         xpath=//span[contains(normalize-space(.), 'Record Found') or contains(normalize-space(.), 'Records Found')]
 
 *** Keywords ***
 Check Admin Page
@@ -32,5 +32,5 @@ Find User By Role
 
 Check Records
     [Documentation]    Checks that at least one matching record is found.
-    Wait Until Element Is Visible    ${RECORDS_FILED} 
-    Element Should Not Contain    ${RECORDS_FILED}    No Records Found
+    Wait Until Element Is Visible    ${RECORDS_FIELD} 
+    Element Should Not Contain    ${RECORDS_FIELD}    No Records Found
