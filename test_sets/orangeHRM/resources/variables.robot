@@ -1,6 +1,6 @@
 *** Variables ***
 ${URL}                   https://opensource-demo.orangehrmlive.com
-${BROWSER}               Chrome
+${BROWSER}               headlesschrome
 ${VAILD_USERNAME}        Admin
 ${VAILD_PASSWORD}        admin123
 ${DEFAULT_TIMEOUT}       10s
