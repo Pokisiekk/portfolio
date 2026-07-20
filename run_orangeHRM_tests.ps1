@@ -1,4 +1,4 @@
-$testPath = "test_sets/orangeHRM/"
+$testPath = "test_objects/orangeHRM/"
 $logsDir = "logs/orangeHRM"
 
 $tempVenv = New-TemporaryFile

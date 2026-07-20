@@ -1,4 +1,4 @@
-$testPath = "test_sets/youtube/"
+$testPath = "test_objects/youtube/"
 $logsDir = "logs/youtube"
 
 $tempVenv = New-TemporaryFile

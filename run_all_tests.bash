@@ -1,13 +1,13 @@
 #!/bin/bash
 
-TEST_SETS=(
+TEST_OBJECTS=(
     "reqresAPI" 
     "orangeHRM"
     "ESP32-S3"
     "youtube"
 )
 
-BASE_DIR="test_sets"
+BASE_DIR="test_objects"
 LOGS_DIR="logs"
 TEMP_VENV=$(mktemp -d)
 
@@ -30,18 +30,18 @@ fi
 pip install -r requirements.txt
 rfbrowser init
 
-for TEST_SET in "${TEST_SETS[@]}"; do
-    TEST_PATH="${BASE_DIR}/${TEST_SET}/tests.robot"
-    TEST_LOG_DIR="${LOGS_DIR}/${TEST_SET}"
+for TEST_OBJECT in "${TEST_OBJECTS[@]}"; do
+    TEST_PATH="${BASE_DIR}/${TEST_OBJECT}/tests.robot"
+    TEST_LOG_DIR="${LOGS_DIR}/${TEST_OBJECT}"
     mkdir -p "${TEST_LOG_DIR}"
 
-    echo "Running tests for: ${TEST_SET}"
+    echo "Running tests for: ${TEST_OBJECT}"
     robot --outputdir "${TEST_LOG_DIR}" "${TEST_PATH}"
 
     if [ $? -ne 0 ]; then
-        echo "Tests for ${TEST_SET} failed!"
+        echo "Tests for ${TEST_OBJECT} failed!"
     else
-        echo "Tests for ${TEST_SET} completed successfully."
+        echo "Tests for ${TEST_OBJECT} completed successfully."
     fi
 done
 

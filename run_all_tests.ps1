@@ -5,7 +5,7 @@ $testSets = @(
     "youtube"
 )
 
-$baseDir = "test_sets"
+$baseDir = "test_objects"
 $logsDir = "logs"
 $tempVenv = New-TemporaryFile
 Remove-Item $tempVenv
@@ -34,7 +34,8 @@ foreach ($testSet in $testSets) {
 
     if ($LASTEXITCODE -ne 0) {
         Write-Host "Tests for $testSet failed!" -ForegroundColor Red
-    } else {
+    }
+    else {
         Write-Host "Tests for $testSet completed successfully." -ForegroundColor Green
     }
 }

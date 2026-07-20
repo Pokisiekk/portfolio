@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TEST_PATH="test_sets/youtube/"
+TEST_PATH="test_objects/youtube/"
 LOGS_DIR="logs/youtube"
 TEMP_VENV=$(mktemp -d)
 

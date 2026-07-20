@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TEST_PATH="test_sets/orangeHRM/"
+TEST_PATH="test_objects/orangeHRM/"
 LOGS_DIR="logs/orangeHRM"
 TEMP_VENV=$(mktemp -d)
 
