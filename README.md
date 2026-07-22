@@ -8,31 +8,62 @@ Robotframwrok, as it is my favorite tool to work with.
 
 ## Project Structure
 
-The project is organized into different test sets, each targeting a specific object under test.
+The project is divided into test objects, for which tests are written.
 The structure is as follows:
 
 ```
 .
-├── README.md               # Project documentation
-├── requirements.txt        # Dependencies required to run the tests
-├── run_all_tests.bash      # Script to run all tests
-└── test_objects               # Directory containing test suites
-    ├── ESP32-S3            # Files related to ESP32-S3 microcontroller
-    │   ├── keywords.robot  # Custom keywords for test automation
-    │   ├── tests.robot     # Test cases
-    │   └── variables.robot # Variables used in tests
-    ├── orangeHRM           # Files related to OrangeHRM website
-    │   ├── keywords.robot
-    │   ├── tests.robot
-    │   └── variables.robot
-    └── reqresAPI           # Files related to ReqRes API
-    │   ├── keywords.robot
-    │   ├── tests.robot
-    │   └── variables.robot
-    └── youtube             # Files related to youtube
-        ├── keywords.robot
-        ├── tests.robot
-        └── variables.robot
+├── README.md                      # Project documentation
+├── requirements.txt               # Dependencies required to run the tests
+├── run_all_tests.bash             # Script to run all tests (Bash)
+├── run_orangeHRM_tests.bash       # Script to run OrangeHRM tests (Bash)
+├── run_youtube_tests.bash         # Script to run YouTube tests (Bash)
+├── run_all_tests.ps1              # Script to run all tests (PowerShell)
+├── run_orangeHRM_tests.ps1        # Script to run OrangeHRM tests (PowerShell)
+├── run_youtube_tests.ps1          # Script to run YouTube tests (PowerShell)
+└── test_objects                   # Directory containing test suites
+    ├── ESP32-S3                   # ESP32-S3 microcontroller tests
+    │   ├── keywords.robot         # Custom Robot Framework keywords
+    │   ├── tests.robot            # Test cases
+    │   └── variables.robot        # Test variables
+    ├── orangeHRM                  # OrangeHRM web application tests
+    │   ├── components             # Reusable UI components
+    │   │   └── nav_bar_component.robot
+    │   ├── pages                  # Page Object Model definitions
+    │   │   ├── admin_page.robot
+    │   │   ├── dashboard_page.robot
+    │   │   ├── directory_page.robot
+    │   │   ├── login_page.robot
+    │   │   └── time_page.robot
+    │   ├── resources              # Shared resources
+    │   │   ├── keywords.robot
+    │   │   └── variables.robot
+    │   └── tests                  # Test suites
+    │       ├── dashboard.robot
+    │       ├── login.robot
+    │       └── nav_bar.robot
+    ├── reqresAPI                  # ReqRes API tests
+    │   ├── custom_keywords.py     # Python custom keywords
+    │   ├── keywords.robot         # Robot Framework keywords
+    │   ├── tests.robot            # Test cases
+    │   └── variables.robot        # Test variables
+    └── youtube                    # YouTube web application tests
+        ├── components             # Reusable UI components
+        │   ├── nav_bar_component.robot
+        │   └── search_component.robot
+        ├── pages                  # Page Object Model definitions
+        │   ├── base_page.robot
+        │   ├── music_page.robot
+        │   ├── results_page.robot
+        │   └── video_page.robot
+        ├── resources              # Shared resources and utilities
+        │   ├── custom_keywords.py
+        │   ├── keywords.robot
+        │   └── variables.robot
+        └── tests                  # Test suites
+            ├── nav_bar.robot
+            ├── search.robot
+            └── video.robot
 ```
 
 ## How to run tests
